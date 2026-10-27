@@ -183,21 +183,13 @@ class DailyTask extends BaseController
 
         // 计算并更新上月销售排名、销售冠亚季军奖章
         $nameStr = '';
-<<<<<<< HEAD
         $orderNameArr = $this->db->table('bill_order')->select('uName')->where(['uId >' => 1, 'createTime >=' => $beginDate . ' 00:00:00', 'createTime <=' => $endDate . ' 23:59:59', 'billType' => 'SALE', 'checkId >' => 0, 'moneyStatus1' => 2, 'isCancel' => 0, 'uName !=' => '', 'isDelete' => 0])->where('uName !=', '系统')->groupBy('uName')->get()->getResultArray();
-=======
-        $orderNameArr = $this->db->table('bill_order')->select('uName')->where(['uId >' => 1, 'createTime >=' => $beginDate . ' 00:00:00', 'createTime <=' => $endDate . ' 23:59:59', 'billType' => 'SALE', 'checkId >' => 0, 'moneyStatus1' => 2, 'isCancel' => 0, 'uName !=' => '', 'uName !=' => '系统', 'isDelete' => 0])->groupBy('uName')->get()->getResultArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         if (count($orderNameArr) > 0) {
             foreach ($orderNameArr as $k5 => $v5) {
                 $nameStr .= ',' . $v5['uName'];
             }
         }
-<<<<<<< HEAD
         $contractNameArr = $this->db->table('bill_contract')->select('saler')->where(['deliverDoneTime >=' => $beginDate . ' 00:00:00','deliverDoneTime <=' => $endDate . ' 23:59:59', 'billType' => 'SALE', 'checkId >' =>  0, 'goodsStatus1 >' => 0, 'redoSoType' => 0, 'saler !=' => '', 'isDelete' => 0])->where('saler !=', '系统')->groupBy('saler')->get()->getResultArray();
-=======
-        $contractNameArr = $this->db->table('bill_contract')->select('saler')->where(['deliverDoneTime >=' => $beginDate . ' 00:00:00','deliverDoneTime <=' => $endDate . ' 23:59:59', 'billType' => 'SALE', 'checkId >' =>  0, 'goodsStatus1 >' => 0, 'redoSoType' => 0, 'saler !=' => '', 'saler !=' => '系统', 'isDelete' => 0])->groupBy('saler')->get()->getResultArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         if (count($contractNameArr) > 0) {
             foreach ($contractNameArr as $k6 => $v6) {
                 $nameStr .= ',' . $v6['saler'];

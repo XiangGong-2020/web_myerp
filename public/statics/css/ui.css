@@ -97,11 +97,7 @@
     line-height: 20px;
     text-align: center;
     color: #333;
-<<<<<<< HEAD
     background-image: url('../img/loading.gif?v=2026102701');
-=======
-    background-image: url('../img/loading.gif?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-repeat: no-repeat;
     background-position: 5px center;
     background-size: 30px 30px;
@@ -267,11 +263,7 @@ table.ui_dialog {
     top: 0;
     right: 0;
     bottom: 0;
-<<<<<<< HEAD
     background-image: url('../img/loading.gif?v=2026102701')!important;
-=======
-    background-image: url('../img/loading.gif?v=2026101403')!important;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-repeat: no-repeat!important;
     background-position: center center!important;
     background-size: 30px 30px!important;
@@ -735,11 +727,7 @@ table.ui_dialog {
 .ui-bedatepicker-input,
 .ui-betimepicker-input,
 .ui-bedatetimepicker-input {
-<<<<<<< HEAD
     background-image: url('../img/datepicker_icon.png?v=2026102701');
-=======
-    background-image: url('../img/datepicker_icon.png?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-repeat: no-repeat;
     background-position: right 0;
 }
@@ -904,11 +892,7 @@ textarea.ui-input {
 .ui-droplist-wrap .loading {
     line-height: 30px;
     padding: 5px 5px 5px 80px;
-<<<<<<< HEAD
     background-image: url('../img/loading.gif?v=2026102701');
-=======
-    background-image: url('../img/loading.gif?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-repeat: no-repeat;
     background-position: 5px center;
     background-size: 30px 30px;
@@ -1010,11 +994,7 @@ textarea.ui-input {
     width: auto !important;
     margin-right: 10px;
     padding: 0 5px 0 20px;
-<<<<<<< HEAD
     background: url('../img/radio.png?v=2026102701') 3px 0 no-repeat #fff !important;
-=======
-    background: url('../img/radio.png?v=2026101403') 3px 0 no-repeat #fff !important;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     cursor: pointer;
 }
 
@@ -1023,19 +1003,11 @@ textarea.ui-input {
 }
 
 .radio.over {
-<<<<<<< HEAD
     background: url('../img/radio.png?v=2026102701') 3px -28px no-repeat #fff !important;
 }
 
 .radio.checked {
     background: url('../img/radio.png?v=2026102701') 3px -56px no-repeat #fff !important;
-=======
-    background: url('../img/radio.png?v=2026101403') 3px -28px no-repeat #fff !important;
-}
-
-.radio.checked {
-    background: url('../img/radio.png?v=2026101403') 3px -56px no-repeat #fff !important;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 }
 
 .radio.dis_check {
@@ -1044,11 +1016,7 @@ textarea.ui-input {
 
 .chk {
     height: 18px;
-<<<<<<< HEAD
     background: url('../img/checked.png?v=2026102701') no-repeat;
-=======
-    background: url('../img/checked.png?v=2026101403') no-repeat;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     cursor: pointer;
     text-indent: 24px;
     color: #555;
@@ -1061,7 +1029,6 @@ textarea.ui-input {
 }
 
 .chk.over {
-<<<<<<< HEAD
     background: url('../img/checked.png?v=2026102701') 0 -18px no-repeat;
 }
 
@@ -1071,17 +1038,6 @@ textarea.ui-input {
 
 .chk.dis_check {
     background: url('../img/checked.png?v=2026102701') no-repeat;
-=======
-    background: url('../img/checked.png?v=2026101403') 0 -18px no-repeat;
-}
-
-.chk.checked {
-    background: url('../img/checked.png?v=2026101403') 0 -36px no-repeat;
-}
-
-.chk.dis_check {
-    background: url('../img/checked.png?v=2026101403') no-repeat;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     color: #ccc;
 }
 
@@ -1725,11 +1681,7 @@ textarea.ui-input {
 /* no-data */
 .no-data {
     height: 100%;
-<<<<<<< HEAD
     background-image: url(../img/no-data.png?v=2026102701);
-=======
-    background-image: url(../img/no-data.png?v=2026101403);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-position: center center;
     background-repeat: no-repeat;
 }

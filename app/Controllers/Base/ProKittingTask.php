@@ -37,11 +37,7 @@ class ProKittingTask extends BaseController
             $builder->where('uName', $status2);
         }
         if ($status3) {
-<<<<<<< HEAD
             $builder->where('FIND_IN_SET(' . $this->db->escape($status3) . ', takeName) >', 0, false);
-=======
-            $builder->where("FIND_IN_SET(" . $this->db->escape($status3) . ", takeName) >", 0, false);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
         if ($status4 >= 0) {
             if ($status4 == 0) {

@@ -396,13 +396,8 @@ class Clockin extends BaseController
             log_message('error', $this->myerp['uName'] . ' 访问 /Base/Clockin/addressSearch 权限不足！');
             return $this->response->setJSON(['status' => -1, 'msg' => '权限不足！']);
         }
-<<<<<<< HEAD
         $latitude = (float)$this->request->getGetPost('latitude');
         $longitude = (float)$this->request->getGetPost('longitude');
-=======
-        $latitude = $this->request->getGetPost('latitude');
-        $longitude = $this->request->getGetPost('longitude');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $address = address_search($latitude, $longitude);
         if ($address) {
             return $this->response->setJSON(['status' => 200, 'msg' => '查询成功！', 'data' => $address]);

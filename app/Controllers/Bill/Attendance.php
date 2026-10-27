@@ -139,11 +139,7 @@ class Attendance extends BaseController
             $info = array_intersect_key($data, array_flip(['description', 'modifyTime', 'isDraft']));
             $this->db->transStart();
             $this->db->table('bill_attendance')->where('id', $data['id'])->update($info);
-<<<<<<< HEAD
             $this->attendance_info(intval($data['id']), $data);
-=======
-            $this->attendance_info($data);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             $this->myservice->log('编辑了出勤月表单' . ($data['isDraft'] == 1 ? '草稿' : '') . (($oldData['isDraft'] == 1 && $data['isDraft'] == 0) ? '，并将草稿转为了正式' : '') . '，单号：' . $oldData['billNo']);
             $this->db->transComplete();
             if ($this->db->transStatus() === false) {
@@ -225,11 +221,7 @@ class Attendance extends BaseController
             }
         }
         if (isset($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_attendance_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_attendance_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 验证
@@ -468,11 +460,7 @@ class Attendance extends BaseController
                                 if (
                                     $this->db->table('clockin')
                                         ->where('clockDate', $lastday)
-<<<<<<< HEAD
                                         ->where('FIND_IN_SET("值班", marks) >', 0, false)
-=======
-                                        ->where("FIND_IN_SET('值班', marks) >", 0, false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                                         ->groupStart()
                                             ->groupStart()
                                                 ->where('pmClock >=', '16:40:00')

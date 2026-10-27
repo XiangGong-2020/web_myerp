@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/bills.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/bills.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body>
@@ -112,13 +108,8 @@
             <button id="subTaxRate" style="margin-left:5px;width:40px;">确定</button>
         </div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/uploader/jquery.uploader.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/salesOrder-manage.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/uploader/jquery.uploader.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/salesOrder-manage.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

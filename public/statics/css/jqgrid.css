@@ -586,11 +586,7 @@ tr.ui-search-toolbar select {
     line-height: 20px;
     text-align: center;
     color: #333;
-<<<<<<< HEAD
     background-image: url('../img/loading.gif?v=2026102701');
-=======
-    background-image: url('../img/loading.gif?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-repeat: no-repeat;
     background-position: 5px center;
     background-size: 30px 30px;

@@ -441,11 +441,7 @@ class SpiderBid03 extends BaseController
         // 招标公告
         $res = global_curl($url, [
             'post' => 1,
-<<<<<<< HEAD
             'postfields' => '{"pageNo":1,"pageSize":15,"categoryCode":"ZcyAnnouncement3001","_t":' . intval(microtime(true) * 1000) . '}'
-=======
-            'postfields' => '{"pageNo":1,"pageSize":100,"categoryCode":"ZcyAnnouncement3001","_t":' . intval(microtime(true) * 1000) . '}'
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         ]);
         if ($res !== false) {
             $obj = json_decode($res, true);
@@ -478,11 +474,7 @@ class SpiderBid03 extends BaseController
         // 采购文件需求公示
         $res = global_curl($url, [
             'post' => 1,
-<<<<<<< HEAD
             'postfields' => '{"pageNo":1,"pageSize":15,"categoryCode":"ZcyAnnouncement3014","_t":' . intval(microtime(true) * 1000) . '}'
-=======
-            'postfields' => '{"pageNo":1,"pageSize":100,"categoryCode":"ZcyAnnouncement3014","_t":' . intval(microtime(true) * 1000) . '}'
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         ]);
         if ($res !== false) {
             $obj = json_decode($res, true);

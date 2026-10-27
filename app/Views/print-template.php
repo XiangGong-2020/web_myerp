@@ -246,13 +246,8 @@
         </div>
         <div id="storageBox" class="shadow target_box dn"></div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/uploader/jquery.uploader.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/print-template.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/uploader/jquery.uploader.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/print-template.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

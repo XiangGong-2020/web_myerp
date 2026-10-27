@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 <style>
     .invoice-wrapper {
         position: relative;
@@ -180,13 +176,8 @@
     </div>
     <div id="invoices" class="invoices"></div>
     <div id="invoicesAmount" class="invoices-amount h28 pl10 pr10 lh28 f14 white bg-gold bd-rgba1"></div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/uploader/jquery.uploader.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/invoice-bill-manage.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/uploader/jquery.uploader.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/invoice-bill-manage.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

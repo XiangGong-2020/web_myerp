@@ -1,11 +1,6 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026102701" />
 <link rel="stylesheet" type="text/css" href="/statics/js/plugins/fSelect/fSelect.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026101403" />
-<link rel="stylesheet" type="text/css" href="/statics/js/plugins/fSelect/fSelect.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 <style>
     .custom-con {
         padding: 10px;
@@ -139,13 +134,8 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/fSelect/fSelect.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/system-parameter.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/fSelect/fSelect.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/system-parameter.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

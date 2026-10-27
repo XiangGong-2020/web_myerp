@@ -191,20 +191,13 @@ class Achievement extends BaseController
     {
         foreach ($data['entries'] as $arr => $row) {
             $v[$arr]['id'] = intval($row['id']);
-<<<<<<< HEAD
             $v[$arr]['iid'] = intval($iid);
-=======
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             $v[$arr]['bonusOffSeason'] = intval($row['bonusOffSeason']);
             $v[$arr]['finalSalary'] = intval($row['finalSalary']);
             $v[$arr]['description'] = $row['description'];
         }
         if (isset($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_achievement_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_achievement_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 导出原单
@@ -606,11 +599,7 @@ class Achievement extends BaseController
                             ->where('paidTime <=', $endDate . ' 23:59:59')
                             ->where(['isReq' => 2, 'uId' => $user['id'], 'billType' => 'PUR', 'limitPrice >' => 0, 'price >' => 0])
                             ->where('paidAmount >', 0)
-<<<<<<< HEAD
                             ->where('paidAmount >= amount', null, false)
-=======
-                            ->where('paidAmount >=', 'amount', false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                             ->where('isDelete', 0)
                             ->get()
                             ->getRowArray()['deAmount'] ?? 0);
@@ -630,11 +619,7 @@ class Achievement extends BaseController
                             ->where('deliverDoneTime >=', $beginDate . ' 00:00:00')
                             ->where('deliverDoneTime <=', $endDate . ' 23:59:59')
                             ->where(['billType' => 'SALE', 'checkId >' => 0, 'goodsStatus1 >' => 0, 'redoSoType' => 0, 'isDelete' => 0])
-<<<<<<< HEAD
                             ->where('FIND_IN_SET(' . $this->db->escape($user['name']) . ', saler) >', 0, false)
-=======
-                            ->where("FIND_IN_SET('" . $user['name'] . "', saler) >", 0, false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                             ->get()
                             ->getRowArray()['amount'] ?? 0);
 
@@ -661,11 +646,7 @@ class Achievement extends BaseController
                             ->where('deliverDoneTime >=', $beginDate . ' 00:00:00')
                             ->where('deliverDoneTime <=', $endDate . ' 23:59:59')
                             ->where(['billType' => 'SALE', 'checkId >' => 0, 'goodsStatus1 >' => 0, 'redoSoType' => 0, 'srcMoneyId2 >' => 0, 'isDelete' => 0])
-<<<<<<< HEAD
                             ->where('FIND_IN_SET(' . $this->db->escape($user['name']) . ', saler) >', 0, false)
-=======
-                            ->where("FIND_IN_SET('" . $user['name'] . "', saler) >", 0, false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                             ->get()
                             ->getResultArray();
                         if (!empty($contractRefundBills)) {
@@ -1007,11 +988,7 @@ class Achievement extends BaseController
                             ->where('limitPrice >', 0)
                             ->where('price >', 0)
                             ->where('paidAmount >', 0)
-<<<<<<< HEAD
                             ->where('paidAmount >= amount', null, false)
-=======
-                            ->where('paidAmount >=', 'amount', false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                             ->where('isDelete', 0)
                             ->get()
                             ->getRowArray()['deAmount'] ?? 0);
@@ -1490,11 +1467,7 @@ class Achievement extends BaseController
                 ->where('limitPrice >', 0)
                 ->where('price >', 0)
                 ->where('paidAmount >', 0)
-<<<<<<< HEAD
                 ->where('paidAmount >= amount', null, false)
-=======
-                ->where('paidAmount >=', 'amount', false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 ->where('isDelete', 0)
                 ->get()
                 ->getRowArray()['deAmount'] ?? 0);
@@ -1704,11 +1677,7 @@ class Achievement extends BaseController
                 ->where('beginDate <=', $endDate)
                 ->groupStart()
                     ->where('leader', $uName)
-<<<<<<< HEAD
                     ->orWhere('FIND_IN_SET(' . $this->db->escape($uName) . ', other) >', 0, false)
-=======
-                    ->orWhere("FIND_IN_SET('". $uName ."', other) >", 0, false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 ->groupEnd()
                 ->where('isDelete', 0)
                 ->countAllResults();
@@ -1717,11 +1686,7 @@ class Achievement extends BaseController
             $serviceTarget = $this->db->table('service')
                 ->where('beginDate >=', $beginDate . ' 00:00:00')
                 ->where('beginDate <=', $endDate . ' 23:59:59')
-<<<<<<< HEAD
                 ->where('FIND_IN_SET(' . $this->db->escape($uName) . ', targetName) >', 0, false)
-=======
-                ->where("FIND_IN_SET('". $uName ."', targetName) >", 0, false)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 ->where('targetAmount >', 0)
                 ->where('disStatus', 3)
                 ->where('isDelete', 0)

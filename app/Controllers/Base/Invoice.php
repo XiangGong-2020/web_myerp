@@ -153,7 +153,6 @@ class Invoice extends BaseController
             log_message('error', $this->myerp['uName'] . ' 访问 /Base/Invoice/queryAll 权限不足！');
             return $this->response->setJSON(['status' => -1, 'msg' => '权限不足！']);
         }
-<<<<<<< HEAD
         $billNo = (string)$this->request->getGetPost('billNo');
         $builder = $this->db->table('invoice');
         $builder->where('isDelete', 0);
@@ -173,15 +172,6 @@ class Invoice extends BaseController
                 ->get()
                 ->getResultArray(), null, 'uName');
         }
-=======
-        $billNo = $this->request->getGetPost('billNo');
-        $builder = $this->db->table('invoice');
-        $builder->where('isDelete', 0);
-        if ($billNo) {
-            $builder->like('billNo', $this->db->escapeLikeString((string)$billNo));
-        }
-        $list = $builder->orderBy('id', 'DESC')->get()->getResultArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $v = [];
         foreach ($list as $arr => $row) {
             if (isset($userAmountData)) {
@@ -221,10 +211,7 @@ class Invoice extends BaseController
         $json['msg'] = 'success';
         $json['data']['rows'] = $v;
         $json['data']['records'] = count($v);
-<<<<<<< HEAD
         $json['data']['userAmountData'] = $userAmountData ?? null;
-=======
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         return $this->response->setJSON($json);
     }
     // 发票记录 查询
@@ -2013,11 +2000,7 @@ class Invoice extends BaseController
         $type = intval($this->request->getGetPost('type'));
         $uName = $this->request->getGetPost('uName');
         $billType = $this->request->getGetPost('billType');
-<<<<<<< HEAD
         $builder = $this->db->table('bill_' . $billType);
-=======
-        $builder = $this->db->table('invoice_err');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $builder->where('isDelete', 0);
         if ($type > 0) {
             $builder->where('isIgnoreInvoice >=', 2);
@@ -2031,7 +2014,6 @@ class Invoice extends BaseController
             if (!$this->myservice->verifyRight('SYS_ADMIN')) {
                 $builder->where('uName', $uName);
             }
-<<<<<<< HEAD
             $total_order = (clone $builder)->from('bill_order', true)->where('billType', 'PUR')->where('invoiceAmount < amount', null, false)->where('isDraft', 0)->where('isCancel', 0)->countAllResults();
             $total_contract_info = (clone $builder)->from('bill_contract_info', true)->where('billType', 'PUR')->where('paidAmount >', 0)->where('isRecInvoice', 0)->where('isDraft', 0)->countAllResults();
             $total_money = (clone $builder)->from('bill_money', true)->where('billType', 'EXP')->where('invoiceAmount < cleared', null, false)->countAllResults();
@@ -2051,27 +2033,6 @@ class Invoice extends BaseController
                     break;
                 case 'deliver':
                     $list = (clone $builder)->from('bill_deliver', true)->where('invoiceAmount < amount', null, false)->where('isDraft', 0)->limit($rows)->offset($rows * ($page - 1))->get()->getResultArray();
-=======
-            $total_order = (clone $builder)->where('billType', 'PUR')->where('invoiceAmount < amount', null, false)->where('isDraft', 0)->where('isCancel', 0)->countAllResults();
-            $total_contract_info = (clone $builder)->where('billType', 'PUR')->where('paidAmount >', 0)->where('isRecInvoice', 0)->where('isDraft', 0)->countAllResults();
-            $total_money = (clone $builder)->where('billType', 'EXP')->where('invoiceAmount < cleared', null, false)->countAllResults();
-            $total_deliver = (clone $builder)->where('invoiceAmount < amount', null, false)->where('isDraft', 0)->countAllResults();
-            switch ($billType) {
-                case 'order':
-                    $list = (clone $builder)->where('billType', 'PUR')->where('invoiceAmount < amount', null, false)->where('isDraft', 0)->where('isCancel', 0)->limit($rows)->offset($rows * ($page - 1))->get()->getResultArray();
-                    $total = $total_order;
-                    break;
-                case 'contract_info':
-                    $list = (clone $builder)->where('billType', 'PUR')->where('paidAmount >', 0)->where('isRecInvoice', 0)->where('isDraft', 0)->limit($rows)->offset($rows * ($page - 1))->get()->getResultArray();
-                    $total = $total_contract_info;
-                    break;
-                case 'money':
-                    $list = (clone $builder)->where('billType', 'EXP')->where('invoiceAmount < cleared', null, false)->limit($rows)->offset($rows * ($page - 1))->get()->getResultArray();
-                    $total = $total_money;
-                    break;
-                case 'deliver':
-                    $list = (clone $builder)->where('invoiceAmount < amount', null, false)->where('isDraft', 0)->limit($rows)->offset($rows * ($page - 1))->get()->getResultArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                     $total = $total_deliver;
                     break;
                 default:

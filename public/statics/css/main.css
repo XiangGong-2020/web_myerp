@@ -507,7 +507,6 @@ body {
 }
 
 .user-star-1 {
-<<<<<<< HEAD
     background-image: url('../img/user-star-1.png?v=2026102701');
 }
 
@@ -545,45 +544,6 @@ body {
 
 .user-star-10 {
     background-image: url('../img/user-star-10.png?v=2026102701');
-=======
-    background-image: url('../img/user-star-1.png?v=2026101403');
-}
-
-.user-star-2 {
-    background-image: url('../img/user-star-2.png?v=2026101403');
-}
-
-.user-star-3 {
-    background-image: url('../img/user-star-3.png?v=2026101403');
-}
-
-.user-star-4 {
-    background-image: url('../img/user-star-4.png?v=2026101403');
-}
-
-.user-star-5 {
-    background-image: url('../img/user-star-5.png?v=2026101403');
-}
-
-.user-star-6 {
-    background-image: url('../img/user-star-6.png?v=2026101403');
-}
-
-.user-star-7 {
-    background-image: url('../img/user-star-7.png?v=2026101403');
-}
-
-.user-star-8 {
-    background-image: url('../img/user-star-8.png?v=2026101403');
-}
-
-.user-star-9 {
-    background-image: url('../img/user-star-9.png?v=2026101403');
-}
-
-.user-star-10 {
-    background-image: url('../img/user-star-10.png?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 }
 
 .user-info-con {

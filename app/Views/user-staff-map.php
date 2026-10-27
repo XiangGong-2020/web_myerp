@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/bills.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/bills.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 <style>
     .group-level-1,
     .group-level-2,
@@ -224,11 +220,7 @@
         </div>
         <div class="staff-side"></div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/dist/user-staff-map.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/dist/user-staff-map.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

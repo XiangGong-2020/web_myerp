@@ -828,11 +828,7 @@ class InvPc extends BaseController
             $v[$arr]['uName'] = $row['uName'] ?? $data['uName'];
         }
         if (isset($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_contract_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_contract_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // info数据 转正的特采申请单 只更新部分字段
@@ -854,10 +850,7 @@ class InvPc extends BaseController
                     $this->db->table('bill_contract_info')->where('billNo', $oldData['reqNo'])->where('zid', $row['zid'])->where('isDelete', 0)->update(['purId' => $row['uId'], 'purName' => $row['uName'], 'purFeedback' => ($row['purFeedback'] ?? '')]);
                     array_push($v, [
                         'id' => intval($row['id']),
-<<<<<<< HEAD
                         'iid' => intval($iid),
-=======
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                         'price' => abs((float)$row['price']),
                         'amount' => abs((float)$row['amount']),
                         'myUrl' => $row['myUrl'] ?? '',
@@ -875,11 +868,7 @@ class InvPc extends BaseController
             }
         }
         if (count($v) > 0) {
-<<<<<<< HEAD
             $this->db->table('bill_contract_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_contract_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
         return $errZids;
     }

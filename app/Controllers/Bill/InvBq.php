@@ -472,11 +472,7 @@ class InvBq extends BaseController
             ];
         }
         if (!empty($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_bidquote_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_bidquote_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 数据验证

@@ -22,11 +22,7 @@ var THISPAGE = {
                 $.each(res.data, function(k, v) {
                     var medal = '<div class="mt10 ml10 mr10 bg-white bde b-r-3 ovh"><div class="h20 lh20 p10 bbe">' + k + '</div><div class="pr10 pb10 ovh">';
                     $.each(v, function(i, a) {
-<<<<<<< HEAD
                         medal += '<div class="fl mb10 ml10"><div class="medal" style="background-image: url(../statics/img/' + a.img + '?v=2026102701)"><div class="medal-tit"></div><div class="medal-text">' + a.name + '</div></div><div class="lh20 tc gold">' + a.date + '</div></div>';
-=======
-                        medal += '<div class="fl mb10 ml10"><div class="medal" style="background-image: url(../statics/img/' + a.img + '?v=2026101403)"><div class="medal-tit"></div><div class="medal-text">' + a.name + '</div></div><div class="lh20 tc gold">' + a.date + '</div></div>';
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                     });
                     medal += '</div></div>';
                     $('.diy-con').append(medal);

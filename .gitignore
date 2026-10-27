@@ -1,6 +1,7 @@
 *.zip
 *.rar
 *.7z
+.gitignore
 /.git/
 /.well-known/
 /public/data/

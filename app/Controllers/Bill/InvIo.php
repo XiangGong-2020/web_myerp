@@ -315,22 +315,14 @@ class InvIo extends BaseController
         $v = [];
         foreach ($data['entries'] as $arr => $row) {
             $v[] = [
-<<<<<<< HEAD
                 'id' => intval($row['id']),
                 'iid' => intval($iid),
-=======
-                'id' => $row['id'],
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 'storageId' => intval($row['storageId']),
                 'description' => $row['description']
             ];
         }
         if (!empty($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_inventory_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_inventory_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 其他入库单 验证
@@ -698,22 +690,14 @@ class InvIo extends BaseController
         $v = [];
         foreach ($data['entries'] as $arr => $row) {
             $v[] = [
-<<<<<<< HEAD
                 'id' => intval($row['id']),
                 'iid' => intval($iid),
-=======
-                'id' => $row['id'],
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 'storageId' => intval($row['storageId']),
                 'description' => $row['description']
             ];
         }
         if (!empty($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_inventory_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_inventory_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 其他出库单 验证
@@ -875,10 +859,7 @@ class InvIo extends BaseController
             $info['modifyTime'] = $data['modifyTime'];
             $info['description'] = $data['description'];
             $goods = (array)json_decode($data['goods'], true);
-<<<<<<< HEAD
             $v = [];
-=======
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             foreach ($goods as $arr => $row) {
                 $v[$arr]['goodsId'] = $row['id'];
                 $v[$arr]['invNo'] = $row['no'];
@@ -1345,22 +1326,14 @@ class InvIo extends BaseController
         $v = [];
         foreach ($data['entries'] as $arr => $row) {
             $v[] = [
-<<<<<<< HEAD
                 'id' => intval($row['id']),
                 'iid' => intval($iid),
-=======
-                'id' => $row['id'],
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 'storageId' => intval($row['storageId']),
                 'description' => $row['description']
             ];
         }
         if (!empty($v)) {
-<<<<<<< HEAD
             $this->db->table('bill_inventory_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_inventory_info')->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 成本调整单 验证

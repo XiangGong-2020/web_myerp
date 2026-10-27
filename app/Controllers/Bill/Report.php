@@ -238,7 +238,6 @@ class Report extends BaseController
         $beginDate = $this->request->getGetPost('beginDate');
         $endDate = $this->request->getGetPost('endDate');
 
-<<<<<<< HEAD
         $orderNameArr = $this->db->table('bill_order')
             ->select('uName')
             ->where('uId >', 0)
@@ -263,10 +262,6 @@ class Report extends BaseController
             ->groupBy('saler')
             ->get()
             ->getResultArray();
-=======
-        $orderNameArr = $this->db->table('bill_order')->select('uName')->where(['uId >' => 0, 'uName !=' => '', 'uName !=' => '系统', 'createTime >=' => $beginDate . ' 00:00:00', 'createTime <=' => $endDate . ' 23:59:59', 'billType' => 'SALE', 'checkId >' => 0, 'moneyStatus1' => 2, 'isCancel' => 0, 'isDelete' => 0])->groupBy('uName')->get()->getResultArray();
-        $contractNameArr = $this->db->table('bill_contract')->select('saler')->where(['deliverDoneTime >=' => $beginDate . ' 00:00:00', 'deliverDoneTime <=' => $endDate . ' 23:59:59', 'billType' => 'SALE', 'checkId >' => 0, 'goodsStatus1 >' => 0, 'redoSoType' => 0, 'saler !=' => '', 'saler !=' => '系统', 'isDelete' => 0])->groupBy('saler')->get()->getResultArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $nameStr = '';
         foreach ($orderNameArr as $k => $v) {
             $nameStr .= ',' . $v['uName'];
@@ -317,11 +312,7 @@ class Report extends BaseController
                         'orderAmount' => round((float)$orderAmount, 2),
                         'contractAmount' => round((float)$contractAmount, 2),
                         'onlineshopAmount' => round((float)$onlineshopAmount, 2),
-<<<<<<< HEAD
                         'totalAmount' => round(((float)$orderAmount + (float)$contractAmount + (float)$onlineshopAmount), 2)
-=======
-                        'totalAmount' => round((float)$orderAmount, 2) + round((float)$contractAmount, 2) + round((float)$onlineshopAmount, 2)
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                     ];
                 }
             }
@@ -936,7 +927,6 @@ class Report extends BaseController
                 foreach ($uIdArr as $arr => $uId) {
                     if ($uId) {
                         $uName = $this->db->table('user')->select('name')->where('id', $uId)->get()->getRowArray()['name'] ?? '';
-<<<<<<< HEAD
                         // 采购订单货物种类数
                         $orderNum = $this->db->table('bill_order_info')->where(['billDate >=' => $beginDate, 'billDate <=' => $endDate, 'billType' => 'PUR', 'uId' => $uId, 'checkId >' => 0, 'isDelete' => 0])->countAllResults();
                         // 特殊采购货物种类数
@@ -951,14 +941,6 @@ class Report extends BaseController
                         $overPriceData = $this->db->table('bill_contract_info')->select('COUNT(*) AS overPriceNum, SUM(paidAmount - (limitPrice * 1.25 * qty)) AS overPriceAmount', false)->where(['paidTime >=' => $beginDate . ' 00:00:00', 'paidTime <=' => $endDate . ' 23:59:59', 'isReq' => 2, 'uId' => $uId, 'billType' => 'PUR', 'limitPrice >' => 0, 'price >' => 0, 'paidAmount >' => 0, 'isDelete' => 0])->where('paidAmount > (limitPrice * 1.25 * qty)', null, false)->get()->getRowArray() ?? ['overPriceNum' => 0, 'overPriceAmount' => 0];
                         // 采购业绩
                         $core = intval((float)$orderNum * (float)$expPar['pur']['par1'] + (float)$contractNum * (float)$expPar['pur']['par2'] + (float)$supplierNum * (float)$expPar['pur']['par3'] + (float)$deAmount * (float)$expPar['pur']['par4']);
-=======
-                        $orderNum = $this->db->table('bill_order_info')->where(['billDate >=' => $beginDate, 'billDate <=' => $endDate, 'billType' => 'PUR', 'uId' => $uId, 'checkId >' => 0, 'isDelete' => 0])->countAllResults(); //采购订单货物种类数
-                        $contractNum = $this->db->table('bill_contract_info')->where(['billDate >=' => $beginDate, 'billDate <=' => $endDate, 'billType' => 'PUR', 'isReq !=' => 1, 'uId' => $uId, 'price >' => 0, 'paidAmount >' => 0, 'isDelete' => 0])->countAllResults(); //特殊采购货物种类数
-                        $supplierNum = $this->db->table('contact')->where(['createTime >=' => $beginDate . ' 00:00:00', 'createTime <=' => $endDate . ' 23:59:59', 'uName' => $uName, 'type' => 1, 'isDisable' => 0, 'isDelete' => 0])->countAllResults(); //新增商家数
-                        $invoiceNum = $this->db->table('invoice')->where(['createTime >=' => $beginDate . ' 00:00:00', 'createTime <=' => $endDate . ' 23:59:59', 'uName' => $uName, 'isDelete' => 0])->countAllResults(); //发票录入数
-                        $deAmount = $this->db->table('bill_contract_info')->select('SUM(CASE WHEN (limitPrice * 1.25 * qty) <= paidAmount THEN 0 ELSE ((limitPrice * 1.25 * qty) - paidAmount) END) AS deAmount', false)->where(['paidTime >=' => $beginDate . ' 00:00:00', 'paidTime <=' => $endDate . ' 23:59:59', 'isReq' => 2, 'uId' => $uId, 'billType' => 'PUR', 'limitPrice >' => 0, 'price >' => 0, 'paidAmount >' => 0, 'paidAmount >=' => 'amount', 'isDelete' => 0])->get()->getRowArray()['deAmount'] ?? 0; //特殊采购毛利
-                        $core = intval((float)$orderNum * (float)$expPar['pur']['par1'] + (float)$contractNum * (float)$expPar['pur']['par2'] + (float)$supplierNum * (float)$expPar['pur']['par3'] + (float)$deAmount * (float)$expPar['pur']['par4']); //采购业绩
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                         $v[] = [
                             'uName' => $uName,
                             'dateRange' => $beginDate . ' ~ ' . $endDate,
@@ -966,11 +948,8 @@ class Report extends BaseController
                             'contractNum' => $contractNum,
                             'supplierNum' => $supplierNum,
                             'invoiceNum' => $invoiceNum,
-<<<<<<< HEAD
                             'overPriceNum' => (string)round($overPriceData['overPriceNum'], 2),
                             'overPriceAmount' => (string)round($overPriceData['overPriceAmount'], 2),
-=======
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                             'core' => $core,
                         ];
                     }
@@ -1146,15 +1125,9 @@ class Report extends BaseController
         $json['data']['records'] = count($data);
         $json['data']['total'] = ceil($json['data']['records'] / $rows);
         $json['data']['rows'] = $data;
-<<<<<<< HEAD
         $json['data']['total_purPaidAmount'] = round($total_purPaidAmount, 2);
         $json['data']['total_purInvoiceAmount'] = round($total_purInvoiceAmount, 2);
         $json['data']['total_rate'] = round($total_rate, 2);
-=======
-        $json['data']['total_purPaidAmount'] = $total_purPaidAmount;
-        $json['data']['total_purInvoiceAmount'] = $total_purInvoiceAmount;
-        $json['data']['total_rate'] = $total_rate;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         return $this->response->setJSON($json);
     }
     // 特采历史

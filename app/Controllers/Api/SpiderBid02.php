@@ -366,32 +366,12 @@ class SpiderBid02 extends BaseController
             log_message('error', '招标采集：未获取到网页 240 -> 国盛招标项目管理咨询（广州）有限公司');
         }
         // 242 广东建宇项目管理有限公司
-<<<<<<< HEAD
         $url = 'https://www.gdjianyu.com/api/notices?cat=gczb&subcat=%E6%8B%9B%E6%A0%87%E5%85%AC%E5%91%8A&q=&page=8&pageSize=20';
         $res = global_curl($url);
         if ($res !== false) {
             $obj = json_decode($res, true);
             $arr = $obj['items'] ?? [];
             if (is_array($arr) && count($arr) > 0) {
-=======
-        $url = 'http://www.fsjianyu.com/page.asp?sortid=484&typeid=538';
-        $res = global_curl($url);
-        if ($res !== false) {
-            $res = preg_replace("/([\r|\n|\t| ]+)/", '', $res);
-            $res_temp = [];
-            preg_match('#<divclass="page_tit">招标公告</div><ul>(.*)</ul>#isU', $res, $res_temp);
-            $preg = '#<li.*<a.*href="(.*)".*<h1><img.*>(.*)<span.*>(.*)</span></h1></div></a></li>#isU';
-            $obj = [];
-            $arr = [];
-            is_countable($res_temp) && count($res_temp) > 0 && preg_match_all($preg, $res_temp[1], $obj);
-            $count = (is_countable($obj) && count($obj) > 0) ? count($obj[0]) : 0;
-            if ($count > 0) {
-                for ($j = 0; $j < $count; $j++) {
-                    $arr[$j]['url'] = $obj[1][$j];
-                    $arr[$j]['title'] = $obj[2][$j];
-                    $arr[$j]['beginDate'] = $obj[3][$j];
-                }
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 foreach ($arr as $k => $v) {
                     $data = [];
                     if (!preg_match('#(' . $in_keywords . ')#', $v['title'])) {
@@ -403,13 +383,8 @@ class SpiderBid02 extends BaseController
                             $data['bidSiteId'] = 242;
                             $data['bidSiteName'] = '广东建宇项目管理有限公司';
                             $data['bidTitle'] = $v['title'];
-<<<<<<< HEAD
                             $data['bidUrl'] = 'https://www.gdjianyu.com/'.$v['no'];
                             $data['beginDate'] = date('Y-m-d H:i:s', strtotime($v['date']));
-=======
-                            $data['bidUrl'] = 'https://www.fsjianyu.com/'.$v['url'];
-                            $data['beginDate'] = date('Y-m-d H:i:s', strtotime($v['beginDate']));
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                             $data['inDate'] = date('Y-m-d H:i:s');
                             $final_arr[] = $data;
                         }
@@ -5058,11 +5033,7 @@ class SpiderBid02 extends BaseController
             log_message('error', '招标采集：未获取到网页 1343 -> 建通控股集团');
         }
         // 1363 广西众联工程项目管理有限公司
-<<<<<<< HEAD
         $url = 'http://www.gxzhonglian.cn/NewsList.aspx?NewsTypeKeyID=3';
-=======
-        $url = 'http://www.gxzhonglian.cn/NewsList.aspx?NewsTypeKeyID=3&R=09cc5b33-5306-4c89-b4cd-ccd668cdcf8b';
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $res = global_curl($url);
         if ($res !== false) {
             if (strpos($res, 'window.location.href=') !== false) {
@@ -5123,11 +5094,7 @@ class SpiderBid02 extends BaseController
         }
         // 1369 福建省月德贵招标代理服务有限公司 【特殊通过浏览器刷新插件+自定义js获取数据后发送到本系统api并存数据库，每次采集从数据库拿】
         $res = $this->db->table('bid_temp')->select('res')->where('site', '福建省月德贵招标代理服务有限公司')->get()->getRowArray()['res'] ?? '';
-<<<<<<< HEAD
         if ($res) {
-=======
-        if ($res !== false) {
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             $preg = '#<li.*<pclass="time"><span>(.*)</span><i>(.*)</i></p>.*<a.*href="(.*)".*<h3>(.*)</h3></a>.*</li>#isU';
             $obj = [];
             $arr = [];

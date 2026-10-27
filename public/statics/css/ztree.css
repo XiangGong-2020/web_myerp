@@ -100,11 +100,7 @@
     background-color: transparent;
     background-repeat: no-repeat;
     background-attachment: scroll;
-<<<<<<< HEAD
     background-image: url('../img/zTreeStandard.png?v=2026102701');
-=======
-    background-image: url('../img/zTreeStandard.png?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 }
 
 .ztree li span.button.chk {
@@ -291,11 +287,7 @@
 
 .ztree li span.button.ico_loading {
     margin-right: 2px;
-<<<<<<< HEAD
     background-image: url('../img/loading.gif?v=2026102701');
-=======
-    background-image: url('../img/loading.gif?v=2026101403');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     background-repeat: no-repeat;
     background-size: 30px 30px;
     vertical-align: top;

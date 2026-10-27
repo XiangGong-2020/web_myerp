@@ -37,7 +37,7 @@ class Goods extends BaseController
             ->groupEnd();
         }
         if ($categoryId > 0) {
-            $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $categoryId . ', path) >', 0, false)->get()->getResultArray(), 'id');
+            $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET("' . $categoryId . '", path) >', 0, false)->get()->getResultArray(), 'id');
             if (is_array($cid_arr) && count($cid_arr) > 0) {
                 $builder->whereIn('categoryId', $cid_arr);
             }
@@ -198,11 +198,7 @@ class Goods extends BaseController
                 $builder->where('billDate >', '0000-00-00');
             }
             if ($categoryId > 0) {
-<<<<<<< HEAD
-                $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $categoryId . ', path) >', 0, false)->get()->getResultArray(), 'id');
-=======
-                $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $this->db->escape($categoryId) . ', path) >', 0, false)->get()->getResultArray(), 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+                $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET("' . $categoryId . '", path) >', 0, false)->get()->getResultArray(), 'id');
                 if (is_array($cid_arr) && count($cid_arr) > 0) {
                     $builder->whereIn('categoryId', $cid_arr);
                 }
@@ -1868,11 +1864,7 @@ class Goods extends BaseController
             $builder->where('storageId', $storageId);
         }
         if ($categoryId > 0) {
-<<<<<<< HEAD
-            $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $categoryId . ', path) >', 0, false)->get()->getResultArray(), 'id');
-=======
-            $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET('.$this->db->escape($categoryId).', path) >', 0, false)->get()->getResultArray(), 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+            $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET("' . $categoryId . '", path) >', 0, false)->get()->getResultArray(), 'id');
             if (count($cid) > 0) {
                 $builder->whereIn('categoryId', $cid);
             }
@@ -2020,11 +2012,7 @@ class Goods extends BaseController
         $builder = $this->db->table('goods');
         $builder->whereNotIn('categoryId', [263, 435])->where('isDisable <', 2)->where('isDelete', 0);
         if ($categoryId > 0) {
-<<<<<<< HEAD
-            $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $categoryId . ', path) >', 0, false)->get()->getResultArray(), 'id');
-=======
-            $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $this->db->escape($categoryId) . ', path) >', 0, false)->get()->getResultArray(), 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+            $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET("' . $categoryId . '", path) >', 0, false)->get()->getResultArray(), 'id');
             if (count($cid) > 0) {
                 $builder->whereIn('categoryId', $cid);
             }
@@ -2128,11 +2116,7 @@ class Goods extends BaseController
                 $builder->where('(currentQty > highQty or currentQty < lowQty)', null, false);
             }
             if ($categoryId > 0) {
-<<<<<<< HEAD
-                $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $categoryId . ', path) >', 0, false)->get()->getResultArray(), 'id');
-=======
-                $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $this->db->escape($categoryId) . ', path) >', 0, false)->get()->getResultArray(), 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+                $cid = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET("' . $categoryId . '", path) >', 0, false)->get()->getResultArray(), 'id');
                 if (count($cid) > 0) {
                     $builder->whereIn('categoryId', $cid);
                 }
@@ -2350,11 +2334,7 @@ class Goods extends BaseController
             $builder->where('billDate <', date('Y-m-d', strtotime('-' . $monthNum . ' months')))->where('billDate >', '0000-00-00');
         }
         if ($categoryId > 0) {
-<<<<<<< HEAD
-            $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $categoryId . ', path) >', 0, false)->get()->getResultArray(), 'id');
-=======
-            $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET(' . $this->db->escape($categoryId) . ', path) >', 0, false)->get()->getResultArray(), 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+            $cid_arr = array_column($this->db->table('category')->select('id')->where('isDelete', 0)->where('FIND_IN_SET("' . $categoryId . '", path) >', 0, false)->get()->getResultArray(), 'id');
             if (is_array($cid_arr) && count($cid_arr) > 0) {
                 $builder->whereIn('categoryId', $cid_arr);
             }

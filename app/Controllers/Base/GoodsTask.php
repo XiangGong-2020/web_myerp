@@ -48,11 +48,7 @@ class GoodsTask extends BaseController
             $builder->where('publishDate <=', $endDate);
         }
         if ($unDone > 0) {
-<<<<<<< HEAD
             $builder->where('FIND_IN_SET("5", status) =', 0, false);
-=======
-            $builder->where('!FIND_IN_SET(5, status) >', 0, false);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
         if ($skey !== '' && $skey !== null) {
             $keywords = array_values(array_filter(explode(',', $skey), 'strlen'));

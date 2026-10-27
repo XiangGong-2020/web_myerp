@@ -335,16 +335,8 @@ class Bid extends BaseController
         $id = intval($this->request->getGetPost('id'));
         $bidTitle = $this->request->getGetPost('bidTitle');
         if ($id > 0 && $bidTitle) {
-<<<<<<< HEAD
             $this->myservice->log('查看了招标信息，ID：' . $id . '，标题：' . $bidTitle);
             return $this->response->setJSON(['status' => 200, 'msg' => 'success']);
-=======
-            $result = $this->myservice->log('查看了招标信息，ID：' . $id . '，标题：' . $bidTitle);
-            if ($result) {
-                return $this->response->setJSON(['status' => 200, 'msg' => 'success']);
-            }
-            return $this->response->setJSON(['status' => -1, 'msg' => 'fail']);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         } else {
             return $this->response->setJSON(['status' => -1, 'msg' => 'fail']);
         }
@@ -629,10 +621,6 @@ class Bid extends BaseController
         $id = intval($this->request->getGetPost('id'));
         if ($id > 0) {
             $result = $this->db->table('bid_site')->where('id', $id)->set('hits', 'hits + 1', false)->update();
-<<<<<<< HEAD
-=======
-            log_message('error', (string)$result);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             if (!$result) {
                 return $this->response->setJSON(['status' => -1, 'msg' => 'fail']);
             }

@@ -953,11 +953,7 @@ class InvSc extends BaseController
                     }
                 }
             }
-<<<<<<< HEAD
             $this->db->table('bill_contract_info')->updateBatch($v, ['id', 'iid']);
-=======
-            $this->db->table('bill_contract_info')->where('id', $v['id'])->updateBatch($v, 'id');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
     }
     // 上传表格并提取数据

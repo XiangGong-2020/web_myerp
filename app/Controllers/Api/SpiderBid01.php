@@ -3572,7 +3572,6 @@ class SpiderBid01 extends BaseController
             }
         }
         // 903 轻采通
-<<<<<<< HEAD
         $url = 'https://t.qc-sd.com/index/index/bidding/category/1.html'; // 上面3条
         $res = global_curl($url);
         if ($res !== false) {
@@ -3613,9 +3612,6 @@ class SpiderBid01 extends BaseController
             log_message('error', '招标采集：未获取到网页 903 -> 轻采通 -> 上面3条');
         }
         $url = 'https://t.qc-sd.com/index/index/bidding/category/1.html?page=1&limit=50'; // 下面10条
-=======
-        $url = 'https://t.qc-sd.com/index/index/bidding/category/1.html?page=1&limit=50';
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $res = global_curl($url, [
             'httpheader' => [
                 'accept: application/json, text/javascript, */*; q=0.01',
@@ -3658,17 +3654,10 @@ class SpiderBid01 extends BaseController
                     }
                 }
             } else {
-<<<<<<< HEAD
                 log_message('error', '招标采集：未匹配到数据 903 -> 轻采通 -> 下面10条');
             }
         } else {
             log_message('error', '招标采集：未获取到网页 903 -> 轻采通 -> 下面10条');
-=======
-                log_message('error', '招标采集：未匹配到数据 903 -> 轻采通');
-            }
-        } else {
-            log_message('error', '招标采集：未获取到网页 903 -> 轻采通');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
         // 910 阳光易招公共资源交易平台
         $url = 'https://www.sunbidding.com/zcggg/index.jhtml';

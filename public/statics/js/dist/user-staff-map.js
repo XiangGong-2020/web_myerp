@@ -21,11 +21,7 @@ var THISPAGE = {
                 var otherGroup = '';
                 $.each(staffData, function(i, v) {
                     $staff_con = '<div class="staff-con staff-level-' + v.groupLevel + '" data-id="' + v.name + '">'
-<<<<<<< HEAD
                         + '<img class="staff-avatar" src="' + v.avatar + '?v=2026102701">'
-=======
-                        + '<img class="staff-avatar" src="' + v.avatar + '?v=2026101403">'
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                         + '<div class="staff-onduty white b-r-3 ' + (v.onDuty == '在岗' ? 'bg-green' : (v.onDuty == '离岗' ? 'bg-aqua' : (v.onDuty == '' ? 'dn' : (v.onDuty.startsWith("申请") == true ? 'bg-purple' : 'bg-red')))) + '">' + v.onDuty + '</div>'
                         + '<div class="staff-name">' + v.name + '</div>'
                         + '<div class="staff-position">' + v.position + '</div>'
@@ -76,11 +72,7 @@ var THISPAGE = {
             var data = staffData[id];
             $('.staff-side ').html(
                 '<i class="staff-side-close iconfont icon-shanchu" title="关闭"></i>'
-<<<<<<< HEAD
                 + '<img class="staff-side-avatar" src="' + data.avatar + '?v=2026102701">'
-=======
-                + '<img class="staff-side-avatar" src="' + data.avatar + '?v=2026101403">'
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 + '<div class="staff-side-avatar-right">'
                 + '<div class="staff-side-tit">姓名</div><div class="staff-side-text">' + data.name + '</div>'
                 + '<div class="staff-side-tit">成长等级</div><div class="staff-side-text">' + data.level + '</div>'

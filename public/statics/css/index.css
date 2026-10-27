@@ -79,11 +79,7 @@ body {
     bottom: 0;
     width: 146px;
     height: 0;
-<<<<<<< HEAD
     background: url('../img/xcx.jpg?v=2026102701') center center no-repeat #fff;
-=======
-    background: url('../img/xcx.jpg?v=2026101403') center center no-repeat #fff;
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 }
 
 .xcx:hover+.xcx-wrap {

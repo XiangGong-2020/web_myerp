@@ -1,9 +1,5 @@
 ﻿<?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/index.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/index.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body>
@@ -325,13 +321,8 @@
         </div>
         <div class="urgent-alert-tip dn" title="紧急通知暂停中（点击恢复）"><i class="iconfont icon-zanting urgent-alert-tip-icon"></i></div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/ligertab/jquery.ligertab-1.3.2.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/index.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/ligertab/jquery.ligertab-1.3.2.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/index.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

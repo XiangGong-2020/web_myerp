@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/main.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/main.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body>
@@ -552,7 +548,6 @@
                 <div class="user-level-preview-con">
                     <div class="user-level-preview-item"><span>等级徽章</span><span>等级名称</span><span>最小经验</span><span>最大经验</span></div>
                     <div id="userlevel1" class="user-level-preview-item">
-<<<<<<< HEAD
                         <img src="/statics/img/user-star-1.png?v=2026102701"><span>萌新</span><span>0</span><span>75</span>
                     </div>
                     <div id="userlevel2" class="user-level-preview-item">
@@ -581,36 +576,6 @@
                     </div>
                     <div id="userlevel10" class="user-level-preview-item">
                         <img src="/statics/img/user-star-10.png?v=2026102701"><span>星河</span><span>10800</span><span>MAX</span>
-=======
-                        <img src="/statics/img/user-star-1.png?v=2026101403"><span>萌新</span><span>0</span><span>75</span>
-                    </div>
-                    <div id="userlevel2" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-2.png?v=2026101403"><span>青铜</span><span>76</span><span>299</span>
-                    </div>
-                    <div id="userlevel3" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-3.png?v=2026101403"><span>白银</span><span>300</span><span>699</span>
-                    </div>
-                    <div id="userlevel4" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-4.png?v=2026101403"><span>黄金</span><span>700</span><span>1299</span>
-                    </div>
-                    <div id="userlevel5" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-5.png?v=2026101403"><span>铂金</span><span>1300</span><span>2199</span>
-                    </div>
-                    <div id="userlevel6" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-6.png?v=2026101403"><span>水晶</span><span>2200</span><span>3499</span>
-                    </div>
-                    <div id="userlevel7" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-7.png?v=2026101403"><span>钻石</span><span>3500</span><span>5299</span>
-                    </div>
-                    <div id="userlevel8" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-8.png?v=2026101403"><span>星辰</span><span>5300</span><span>7699</span>
-                    </div>
-                    <div id="userlevel9" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-9.png?v=2026101403"><span>星云</span><span>7700</span><span>10799</span>
-                    </div>
-                    <div id="userlevel10" class="user-level-preview-item">
-                        <img src="/statics/img/user-star-10.png?v=2026101403"><span>星河</span><span>10800</span><span>MAX</span>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                     </div>
                 </div>
             </div>
@@ -646,15 +611,9 @@
             <div class="levelup-close"><i class="iconfont icon-guanbi f14" title="关闭"></i></div>
         </div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/echarts/echarts.min.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/plugins/calendar/calendar.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/main.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/echarts/echarts.min.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/plugins/calendar/calendar.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/main.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

@@ -1,11 +1,6 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026102701" />
 <link rel="stylesheet" type="text/css" href="/statics/js/plugins/fSelect/fSelect.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026101403" />
-<link rel="stylesheet" type="text/css" href="/statics/js/plugins/fSelect/fSelect.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body>
@@ -66,13 +61,8 @@
     <script>
         window.UMEDITOR_HOME_URL = "/statics/js/plugins/ueditor/";
     </script>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/ueditor/ueditor.config.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/plugins/ueditor/ueditor.all.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/ueditor/ueditor.config.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/plugins/ueditor/ueditor.all.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
     <script>
         //实例化编辑器
         var ue = UE.getEditor('editor', {
@@ -112,13 +102,8 @@
             ]
         });
     </script>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/fSelect/fSelect.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/service-manage.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/fSelect/fSelect.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/service-manage.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

@@ -258,13 +258,8 @@ class APP extends BaseController
     // 打卡地址查验
     public function addressSearch()
     {
-<<<<<<< HEAD
         $latitude = (float)$this->request->getGetPost('latitude');
         $longitude = (float)$this->request->getGetPost('longitude');
-=======
-        $latitude = $this->request->getGetPost('latitude');
-        $longitude = $this->request->getGetPost('longitude');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         $address = address_search($latitude, $longitude);
         if ($address) {
             return $this->response->setJSON(['status' => 200, 'msg' => '查询成功', 'data' => $address]);
@@ -1811,11 +1806,7 @@ class APP extends BaseController
     {
         $uName = $this->request->getGetPost('uName');
         if ($uName) {
-<<<<<<< HEAD
             $group = $this->db->table('pro_group')->where('FIND_IN_SET(' . $this->db->escape($uName) . ', members) > 0', null, false)->where(['type' => '配货组', 'isDelete' => 0])->get()->getRowArray();
-=======
-            $group = $this->db->table('pro_group')->where("FIND_IN_SET(" . $this->db->escape($uName) . ", members) >", 0, false)->where(['type' => '配货组', 'isDelete' => 0])->get()->getRowArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             if ($group) {
                 $takeGroup = $this->db->table('user')->select('id,name')->whereIn('name', explode(',', $group['members']))->where(['isDisable' => 0, 'isDelete' => 0])->get()->getResultArray();
                 if ($takeGroup) {
@@ -1931,11 +1922,7 @@ class APP extends BaseController
         $builder->where('isDelete', 0);
         switch ($myTaskType) {
             case 0:
-<<<<<<< HEAD
                 $builder->where('doneStatus <', 2)->where('upQty < getQty', null, false)->where('isGroupTrans', 0)->where('uId', $uId);
-=======
-                $builder->where('doneStatus <', 2)->where('upQty <', 'getQty', false)->where('isGroupTrans', 0)->where('uId', $uId);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 break;
             case 1:
                 $builder->where('doneStatus', 1)->where('isGroupTrans', 0)->where('uId', $uId);
@@ -1989,17 +1976,10 @@ class APP extends BaseController
         $json['data']['total'] = $total;
         $json['data']['pages'] = ceil($total / $pageSize);
         $json['data']['list'] = $v;
-<<<<<<< HEAD
         $json['data']['myTaskTotal'] = $this->db->table('pro_kitting_task_get')->where(['uId' => $uId, 'doneStatus <' => 2, 'isGroupTrans' => 0, 'isDelete' => 0])->where('upQty < getQty', null, false)->countAllResults();
         $json['data']['myTaskUnCheckTotal'] = $this->db->table('pro_kitting_task_get')->where(['uId' =>$uId, 'doneStatus' => 1, 'isGroupTrans' => 0, 'isDelete' => 0])->countAllResults();
         $json['data']['myTaskTransTotal'] = $this->db->table('pro_kitting_task_get')->groupStart()->groupStart()->where('uId', $uId)->where('transInfo !=', '')->groupEnd()->orLike('transInfo', $this->db->escapeLikeString($uName))->groupEnd()->where(['doneStatus <' => 2, 'isDelete' => 0])->countAllResults();
         $json['data']['myTaskTimeoutTotal'] = $this->db->table('pro_kitting_task_get')->where(['uId' => $uId, 'lastDate <' => date('Y-m-d H:i:s'), 'isGroupTrans' => 0, 'isDelete' => 0])->where('upQty < getQty', null, false)->countAllResults();
-=======
-        $json['data']['myTaskTotal'] = $this->db->table('pro_kitting_task_get')->where(['uId' => $uId, 'doneStatus <' => 2, 'isGroupTrans' => 0, 'isDelete' => 0])->where('upQty <', 'getQty', false)->countAllResults();
-        $json['data']['myTaskUnCheckTotal'] = $this->db->table('pro_kitting_task_get')->where(['uId' =>$uId, 'doneStatus' => 1, 'isGroupTrans' => 0, 'isDelete' => 0])->countAllResults();
-        $json['data']['myTaskTransTotal'] = $this->db->table('pro_kitting_task_get')->groupStart()->groupStart()->where('uId', $uId)->where('transInfo !=', '')->groupEnd()->orLike('transInfo', $this->db->escapeLikeString($uName))->groupEnd()->where(['doneStatus <' => 2, 'isDelete' => 0])->countAllResults();
-        $json['data']['myTaskTimeoutTotal'] = $this->db->table('pro_kitting_task_get')->where(['uId' => $uId, 'lastDate <' => date('Y-m-d H:i:s'), 'isGroupTrans' => 0, 'isDelete' => 0])->where('upQty <', 'getQty', false)->countAllResults();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         return $this->response->setJSON($json);
     }
     // 我的配货任务 获取同任务领取
@@ -2009,11 +1989,7 @@ class APP extends BaseController
         if ($id > 0) {
             $getinfo = $this->db->table('pro_kitting_task_get')->where(['id' => $id])->get()->getRowArray();
             if ($getinfo) {
-<<<<<<< HEAD
                 $myTaskUpSameGet = $this->db->table('pro_kitting_task_get')->where('iid', $getinfo['iid'])->where('upQty < getQty', null, false)->where('isDelete', 0)->get()->getResultArray();
-=======
-                $myTaskUpSameGet = $this->db->table('pro_kitting_task_get')->where('iid', $getinfo['iid'])->where('upQty <', 'getQty', false)->where('isDelete', 0)->get()->getResultArray();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 foreach ($myTaskUpSameGet as $k => $v) {
                     $myTaskUpSameGet[$k]['getQty'] = intval($v['getQty']);
                     $myTaskUpSameGet[$k]['upQty'] = intval($v['upQty']);

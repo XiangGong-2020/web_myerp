@@ -25,11 +25,7 @@
     <div class="container">
         <div id="imgs" class="imgs content"></div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/dist/goods-img-upload.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/dist/goods-img-upload.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

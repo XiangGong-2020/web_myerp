@@ -24,13 +24,8 @@
         </div>
         <div id="playWind" class="bg-black"></div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/plugins/ezuikit/ezuikit.js?v=2026102701"></script>
     <script type="text/javascript" src="/statics/js/dist/camera-live.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/plugins/ezuikit/ezuikit.js?v=2026101403"></script>
-    <script type="text/javascript" src="/statics/js/dist/camera-live.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

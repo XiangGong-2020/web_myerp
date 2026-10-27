@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body>
@@ -38,11 +34,7 @@
         </form>
         <div class="mt30 tc gray">* 以上信息为社保购买与工资发放必需，请如实填写，并仔细检查无误方可提交。</div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/dist/user-fill.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/dist/user-fill.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

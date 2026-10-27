@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/login.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/login.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body id="body">
@@ -42,11 +38,7 @@
         </div>
     </div>
     <div class="ver">© From 2018 重庆伍陆电子有限责任公司版权所有<br>Ver 1.3.21</div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/dist/login.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/dist/login.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>

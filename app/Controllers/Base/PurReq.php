@@ -235,7 +235,6 @@ class PurReq extends BaseController
         $checkName = $this->request->getGetPost('checkName');
         $checkTime = $checkId > 0 ? date('Y-m-d H:i:s') : '0000-00-00 00:00:00';
         $title = $this->request->getGetPost('title');
-<<<<<<< HEAD
 
         if ($id > 0) {
             $this->db->transStart();
@@ -244,24 +243,11 @@ class PurReq extends BaseController
             $data = $this->db->table('pur_req')->where(['id' => $id])->get()->getRowArray();
             $data['imgs'] = $data['imgs'] == '' ? [] : explode(',', $data['imgs']);
             $data['files'] = $data['files'] == '' ? [] : json_decode($data['files'], true);
-=======
-        if ($id > 0) {
-            $this->db->transStart();
-            $this->db->table('pur_req')->where(['id' => $id])->update(['checkId ' => $checkId, 'checkName' => $checkName, 'checkTime' => $checkTime]);
-            $data = $this->db->table('pur_req')->where(['id' => $id])->get()->getRowArray();
-            $data['imgs'] = $data['imgs'] == '' ? [] : explode(',', $data['imgs']);
-            $data['files'] = $data['files'] == '' ? [] : json_decode($data['files'], true);
-            $this->myservice->log(($checkId > 0 ? '审批了' : '反审批了') . '采购申请，ID：' . $id . '，标题：' . $title);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             $this->db->transComplete();
             if ($this->db->transStatus() === false) {
                 return $this->response->setJSON(['status' => -1, 'msg' => '事务已回滚！']);
             }
-<<<<<<< HEAD
             return $this->response->setJSON(['status' => 200, 'msg' => '操作成功！', 'data' => $data]);
-=======
-            return $this->response->setJSON(['status' => 200, 'msg' => '操作成功！']);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
         return $this->response->setJSON(['status' => -1, 'msg' => '信息不存在！']);
     }

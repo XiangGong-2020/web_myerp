@@ -243,11 +243,7 @@ class Home extends BaseController
         }
         // 产品开发未完成数
         if (in_array('GOODSTASK_UPDATE', $this->myerp['rights'])) {
-<<<<<<< HEAD
             $data['goodsTaskNotice'] = $this->db->table('goods_task')->where('FIND_IN_SET("5", status) =', 0, false)->where('isDelete', 0)->countAllResults();
-=======
-            $data['goodsTaskNotice'] = $this->db->table('goods_task')->where('!FIND_IN_SET(5, status) >', 0, false)->where('isDelete', 0)->countAllResults();
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         }
         // 配货任务未完成数
         if (in_array('PROTASK_ADVANCE', $this->myerp['rights'])) {
@@ -799,11 +795,7 @@ class Home extends BaseController
             }
             // 产品开发60天未完成
             if (in_array('GOODSTASK_UPDATE', $this->myerp['rights'])) {
-<<<<<<< HEAD
                 $builder = $this->db->table('goods_task')->where('FIND_IN_SET("5", status) =', 0, false)->where(['beginDate <=' => date('Y-m-d', strtotime('-60 day')), 'isDelete' => 0]);
-=======
-                $builder = $this->db->table('goods_task')->where('!FIND_IN_SET(5, status) >', 0, false)->where(['beginDate <=' => date('Y-m-d', strtotime('-60 day')), 'isDelete' => 0]);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 if (!in_array($this->myerp['user']['position'], ['总裁', '技术总监'])) {
                     $builder->groupStart()->where('leader', $this->myerp['uName'])->orWhere('FIND_IN_SET(' . $this->db->escape($this->myerp['uName']) . ', other) >', 0, false)->groupEnd();
                 }

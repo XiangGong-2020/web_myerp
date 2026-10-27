@@ -133,11 +133,7 @@ var THISPAGE = {
     },
     initDomLeft: function() {
         if (defaultPage.SYSTEM.locked && !defaultPage.SYSTEM.unlock) {
-<<<<<<< HEAD
             $('.col-main-left').css({'width': 'calc(100% - 430px)', 'height': 'calc(100vh - 20px)', 'margin': '10px', 'text-align': 'center', 'background': 'url("../statics/img/bg-zhiban.png?v=2026102701") center bottom no-repeat #fff', 'border-radius': '3px'}).html('<div class="mt50 mb20 f30 fb tc blue">当前处于值班模式</div><div id="unlock" class="dib p10 hover-red b-r-3">切换到正常模式</div>');
-=======
-            $('.col-main-left').css({'width': 'calc(100% - 430px)', 'height': 'calc(100vh - 20px)', 'margin': '10px', 'text-align': 'center', 'background': 'url("../statics/img/bg-zhiban.png?v=2026101403") center bottom no-repeat #fff', 'border-radius': '3px'}).html('<div class="mt50 mb20 f30 fb tc blue">当前处于值班模式</div><div id="unlock" class="dib p10 hover-red b-r-3">切换到正常模式</div>');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
         } else {
             if (defaultPage.SYSTEM.user.roleId == 1) {
                 $('#salesTargetChart, #invoiceBackChart').removeClass('dn').addClass('link-tab-50');
@@ -622,11 +618,7 @@ var THISPAGE = {
             var data = personalData.myInfo.superiorsInfo;
             $('.staff-side ').html(
                 '<i class="staff-side-close iconfont icon-shanchu" title="关闭"></i>'
-<<<<<<< HEAD
                 + '<img class="staff-side-avatar" src="' + data.avatar + '?v=2026102701">'
-=======
-                + '<img class="staff-side-avatar" src="' + data.avatar + '?v=2026101403">'
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 + '<div class="staff-side-avatar-right">'
                 + '<div class="staff-side-tit">姓名</div><div class="staff-side-text">' + data.name + '</div>'
                 + '<div class="staff-side-tit">成长等级</div><div class="staff-side-text">' + data.level + '</div>'
@@ -644,11 +636,7 @@ var THISPAGE = {
             var data = personalData.myInfo.membersInfo[id];
             $('.staff-side ').html(
                 '<i class="staff-side-close iconfont icon-shanchu"></i>'
-<<<<<<< HEAD
                 + '<img class="staff-side-avatar" src="' + data.avatar + '?v=2026102701">'
-=======
-                + '<img class="staff-side-avatar" src="' + data.avatar + '?v=2026101403">'
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 + '<div class="staff-side-avatar-right">'
                 + '<div class="staff-side-tit">姓名</div><div class="staff-side-text">' + data.name + '</div>'
                 + '<div class="staff-side-tit">成长等级</div><div class="staff-side-text">' + data.level + '</div>'
@@ -1511,11 +1499,7 @@ var THISPAGE = {
                 }
             }
             $.each(a.myInfo.medal, function(k, v) {
-<<<<<<< HEAD
                 medal += '<div class="medal gold" style="background-image: url(../statics/img/' + v.img + '?v=2026102701)"><div class="medal-tit"></div><div class="medal-text">' + v.name + '</div></div>';
-=======
-                medal += '<div class="medal gold" style="background-image: url(../statics/img/' + v.img + '?v=2026101403)"><div class="medal-tit"></div><div class="medal-text">' + v.name + '</div></div>';
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             });
             $('.medals').html(medal);
             // 历史奖章点击事件
@@ -1541,11 +1525,7 @@ var THISPAGE = {
             }
             // 上级主管
             if (a.myInfo.superiorsInfo) {
-<<<<<<< HEAD
                 $('#superiors').html('<div class="user-position-staff-con"><img class="user-position-staff-avatar" src="' + a.myInfo.superiorsInfo.avatar + '?v=2026102701"><div class="user-position-staff-name">' + a.myInfo.superiorsInfo.name + '</div><div class="user-position-staff-onduty es ' + (a.myInfo.superiorsInfo.onDuty == '在岗' ? 'green' : 'red') + '">' + a.myInfo.superiorsInfo.onDuty + '</div><div class="user-position-staff-mobile"><i class="iconfont icon-mobile f12 mr5"></i>' + a.myInfo.superiorsInfo.mobile + '</div></div>').parent().removeClass('dn');
-=======
-                $('#superiors').html('<div class="user-position-staff-con"><img class="user-position-staff-avatar" src="' + a.myInfo.superiorsInfo.avatar + '?v=2026101403"><div class="user-position-staff-name">' + a.myInfo.superiorsInfo.name + '</div><div class="user-position-staff-onduty es ' + (a.myInfo.superiorsInfo.onDuty == '在岗' ? 'green' : 'red') + '">' + a.myInfo.superiorsInfo.onDuty + '</div><div class="user-position-staff-mobile"><i class="iconfont icon-mobile f12 mr5"></i>' + a.myInfo.superiorsInfo.mobile + '</div></div>').parent().removeClass('dn');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             } else {
                 $('#superiors').parent().addClass('dn');
             }
@@ -1553,11 +1533,7 @@ var THISPAGE = {
             if (a.myInfo.membersInfo) {
                 var membersInfo = '';
                 $.each(a.myInfo.membersInfo, function(i, v) {
-<<<<<<< HEAD
                     membersInfo += '<div data-id="' + i + '" class="user-position-staff-con"><img class="user-position-staff-avatar" src="' + v.avatar + '?v=2026102701"><div class="user-position-staff-name">' + v.name + '</div><div class="user-position-staff-onduty es ' + (v.onDuty == '在岗' ? 'green' : 'red') + '">' + v.onDuty + '</div><div class="user-position-staff-mobile"><i class="iconfont icon-mobile f12 mr5"></i>' + v.mobile + '</div></div>';
-=======
-                    membersInfo += '<div data-id="' + i + '" class="user-position-staff-con"><img class="user-position-staff-avatar" src="' + v.avatar + '?v=2026101403"><div class="user-position-staff-name">' + v.name + '</div><div class="user-position-staff-onduty es ' + (v.onDuty == '在岗' ? 'green' : 'red') + '">' + v.onDuty + '</div><div class="user-position-staff-mobile"><i class="iconfont icon-mobile f12 mr5"></i>' + v.mobile + '</div></div>';
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 });
                 $('#members').html(membersInfo).parent().removeClass('dn');
             } else {
@@ -1565,11 +1541,7 @@ var THISPAGE = {
             }
             // 生日皮肤
             if (a.myInfo.birthdaySolar == (new Date).format('M月d日') || a.myInfo.birthdayLunar.replace('闰', '') == (today_lunar.lMonthCn + today_lunar.lDayCn).toString().replace('闰', '')) {
-<<<<<<< HEAD
                 $('#user-happybirthday').css("background-image", "url('../statics/img/user-happybirthday.gif?v=2026102701')").removeClass('dn');
-=======
-                $('#user-happybirthday').css("background-image", "url('../statics/img/user-happybirthday.gif?v=2026101403')").removeClass('dn');
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             }
             // 升级后第一次登录弹出升级皮肤
             if (a.isFirstLogin && a.myInfo.levelNoticedId < a.myInfo.levelId) {
@@ -1606,7 +1578,6 @@ var THISPAGE = {
             }
             // 春节
             if (today_lunar.lMonth == 1 && today_lunar.lDay >= 1 && today_lunar.lDay <= 7) {
-<<<<<<< HEAD
                 $('.festival-tit').css({"background-image": "url('../statics/img/chunjie-tit.gif?v=2026102701')", "background-position": "center 10px"});
                 $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026102701')"}).show(200).delay(8000).hide(200);
             }
@@ -1649,55 +1620,10 @@ var THISPAGE = {
             if (today_lunar.lMonth == 12 && today_lunar.lDay == 30) {
                 $('.festival-tit').css({"background-image": "url('../statics/img/chuxi-tit.gif?v=2026102701')"});
                 $('.festival').css({"background-image": "url('../statics/img/chuxi.gif?v=2026102701')", "background-position": "center -200px"}).show(200).delay(8000).hide(200);
-=======
-                $('.festival-tit').css({"background-image": "url('../statics/img/chunjie-tit.gif?v=2026101403')", "background-position": "center 10px"});
-                $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 元宵节
-            if (today_lunar.lMonth == 1 && today_lunar.lDay == 15) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/yuanxiao-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/yuanxiao.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 清明节
-            if (today_lunar.term == '清明') {
-                $('.festival-tit').css({"background-image": "url('../statics/img/qingming-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/qingming.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 端午节
-            if (today_lunar.lMonth == 5 && today_lunar.lDay == 5) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/duanwu-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/duanwu.gif?v=2026101403')", "background-position": "center -50px"}).show(200).delay(8000).hide(200);
-            }
-            // 七夕节
-            if (today_lunar.lMonth == 7 && today_lunar.lDay == 7) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/qixi-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/qixi.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 中元节
-            if (today_lunar.lMonth == 7 && today_lunar.lDay == 15) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/zhongyuan-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/zhongyuan.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 中秋节
-            if (today_lunar.lMonth == 8 && today_lunar.lDay == 15) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/zhongqiu-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/zhongqiu.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 重阳节
-            if (today_lunar.lMonth == 9 && today_lunar.lDay == 9) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/chongyang-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/chongyang.gif?v=2026101403')", "background-position": "center bottom"}).show(200).delay(8000).hide(200);
-            }
-            // 除夕
-            if (today_lunar.lMonth == 12 && today_lunar.lDay == 30) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/chuxi-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/chuxi.gif?v=2026101403')", "background-position": "center -200px"}).show(200).delay(8000).hide(200);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             }
 
             // 元旦节
             if (today_lunar.sMonth == 1 && today_lunar.sDay == 1) {
-<<<<<<< HEAD
                 $('.festival-tit').css({"background-image": "url('../statics/img/yuandan-tit.gif?v=2026102701')"});
                 $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026102701')"}).show(200).delay(8000).hide(200);
             }
@@ -1750,65 +1676,10 @@ var THISPAGE = {
             if (today_lunar.sMonth == 9 && today_lunar.sDay == 10) {
                 $('.festival-tit').css({"background-image": "url('../statics/img/jiaoshi-tit.gif?v=2026102701')", "margin-top": "-200px"});
                 $('.festival').css({"background-image": "url('../statics/img/jiaoshi.gif?v=2026102701')", "background-position": "center bottom"}).show(200).delay(8000).hide(200);
-=======
-                $('.festival-tit').css({"background-image": "url('../statics/img/yuandan-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 情人节
-            if (today_lunar.sMonth == 2 && today_lunar.sDay == 14) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/qingren-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/qingren.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 妇女节
-            if (today_lunar.sMonth == 3 && today_lunar.sDay == 8) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/nvshen-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/nvshen.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 劳动节
-            if (today_lunar.sMonth == 5 && today_lunar.sDay == 1) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/laodong-tit.gif?v=2026101403')", "background-position": "center 70px"});
-                $('.festival').css({"background-image": "url('../statics/img/laodong.gif?v=2026101403')", "background-repeat": "no-repeat"}).show(200).delay(8000).hide(200);
-            }
-            // 青年节
-            if (today_lunar.sMonth == 5 && today_lunar.sDay == 4) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/qingnian-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/qingnian.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 母亲节
-            if (today_lunar.sMonth == 5 && today_lunar.nWeek == 0 && today_lunar.sDay > 7 && today_lunar.sDay < 14) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/muqin-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/muqin.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 儿童节
-            if (today_lunar.sMonth == 6 && today_lunar.sDay == 1) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/ertong-tit.gif?v=2026101403')", "margin-top": "-200px"});
-                $('.festival').css({"background-image": "url('../statics/img/ertong.gif?v=2026101403')", "background-position": "center bottom"}).show(200).delay(8000).hide(200);
-            }
-            // 父亲节
-            if (today_lunar.sMonth == 6 && today_lunar.nWeek == 0 && today_lunar.sDay > 14 && today_lunar.sDay < 21) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/fuqin-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/fuqin.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 建党节
-            if (today_lunar.sMonth == 7 && today_lunar.sDay == 1) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/jiandang-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/jiandang.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 建军节
-            if (today_lunar.sMonth == 8 && today_lunar.sDay == 1) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/jianjun-tit.gif?v=2026101403')", "background-position": "center -30px"});
-                $('.festival').css({"background-image": "url('../statics/img/jianjun.gif?v=2026101403')", "background-repeat": "no-repeat", "background-size": "1200px 1200px", "background-position": "center center"}).show(200).delay(8000).hide(200);
-            }
-            // 教师节
-            if (today_lunar.sMonth == 9 && today_lunar.sDay == 10) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/jiaoshi-tit.gif?v=2026101403')", "margin-top": "-200px"});
-                $('.festival').css({"background-image": "url('../statics/img/jiaoshi.gif?v=2026101403')", "background-position": "center bottom"}).show(200).delay(8000).hide(200);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             }
             // 国庆节
             if (today_lunar.sMonth == 10 && today_lunar.sDay == 1) {
                 if (today_lunar.lMonth == 8 && today_lunar.lDay == 15) { // 如果同日也是中秋节，先短暂显示中秋，再显示国庆
-<<<<<<< HEAD
                     $('.festival-tit').css({"background-image": "url('../statics/img/zhongqiu-tit.gif?v=2026102701')"});
                     $('.festival').css({"background-image": "url('../statics/img/zhongqiu.gif?v=2026102701')"}).show(200).delay(3000).hide(200);
                     setTimeout(() => {
@@ -1818,22 +1689,10 @@ var THISPAGE = {
                 } else {
                     $('.festival-tit').css({"background-image": "url('../statics/img/guoqing-tit.gif?v=2026102701')"});
                     $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026102701')"}).show(200).delay(8000).hide(200);
-=======
-                    $('.festival-tit').css({"background-image": "url('../statics/img/zhongqiu-tit.gif?v=2026101403')"});
-                    $('.festival').css({"background-image": "url('../statics/img/zhongqiu.gif?v=2026101403')"}).show(200).delay(3000).hide(200);
-                    setTimeout(() => {
-                        $('.festival-tit').css({"background-image": "url('../statics/img/guoqing-tit.gif?v=2026101403')"});
-                        $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-                    }, 3400);
-                } else {
-                    $('.festival-tit').css({"background-image": "url('../statics/img/guoqing-tit.gif?v=2026101403')"});
-                    $('.festival').css({"background-image": "url('../statics/img/denglong.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                 }
             }
             // 双11
             if (today_lunar.sMonth == 11 && today_lunar.sDay == 11) {
-<<<<<<< HEAD
                 $('.festival-tit').css({"background-image": "url('../statics/img/shopping-tit.gif?v=2026102701')"});
                 $('.festival').css({"background-image": "url('../statics/img/shopping.gif?v=2026102701')"}).show(200).delay(8000).hide(200);
             }
@@ -1846,20 +1705,6 @@ var THISPAGE = {
             if (today_lunar.sMonth == 12 && today_lunar.sDay == 12) {
                 $('.festival-tit').css({"background-image": "url('../statics/img/shopping-tit.gif?v=2026102701')"});
                 $('.festival').css({"background-image": "url('../statics/img/shopping.gif?v=2026102701')"}).show(200).delay(8000).hide(200);
-=======
-                $('.festival-tit').css({"background-image": "url('../statics/img/shopping-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/shopping.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 感恩节
-            if (today_lunar.sMonth == 11 && today_lunar.nWeek == 4 && today_lunar.sDay > 21 && today_lunar.sDay < 28) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/ganen-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/ganen.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
-            }
-            // 双12
-            if (today_lunar.sMonth == 12 && today_lunar.sDay == 12) {
-                $('.festival-tit').css({"background-image": "url('../statics/img/shopping-tit.gif?v=2026101403')"});
-                $('.festival').css({"background-image": "url('../statics/img/shopping.gif?v=2026101403')"}).show(200).delay(8000).hide(200);
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
             }
         }
         // 节日皮肤关闭按钮

@@ -35,11 +35,7 @@ class Log extends BaseController
             $keywords = array_values(array_filter(explode(',', $skey), 'strlen'));
             foreach ($keywords as $kw) {
                 $builder->groupStart()
-<<<<<<< HEAD
                     ->where('name', $kw)
-=======
-                    ->like('name', $this->db->escapeLikeString($kw))
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
                     ->orLike('log', $this->db->escapeLikeString($kw))
                 ->groupEnd();
             }

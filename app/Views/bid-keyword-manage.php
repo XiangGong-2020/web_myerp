@@ -1,9 +1,5 @@
 <?= view('header') ?>
-<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026102701" />
-=======
-<link rel="stylesheet" type="text/css" href="/statics/css/manage.css?v=2026101403" />
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </head>
 
 <body>
@@ -31,11 +27,7 @@
             <span class="red">特别说明</span>：政采云网页显示的招标标题与其原始数据的招标标题有时候是不一样的，网页展示给用户看时（比如招标信息详情页）会拼接招标类型名称到标题尾部，例如"原始标题xxx"+"竞价公告"作为展示标题，所以查询政采云某条招标信息我们有没有收录到，或设计关键词时，要忽略尾部拼接的招标类型名称，否则无法命中。
         </div>
     </div>
-<<<<<<< HEAD
     <script type="text/javascript" src="/statics/js/dist/bid-keyword-manage.js?v=2026102701"></script>
-=======
-    <script type="text/javascript" src="/statics/js/dist/bid-keyword-manage.js?v=2026101403"></script>
->>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
 </body>
 
 </html>
