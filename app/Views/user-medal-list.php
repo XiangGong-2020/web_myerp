@@ -1,0 +1,30 @@
+<?= view('header') ?>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mod-search cf bg-white">
+            <div class="fl">
+                <ul class="ul-inline">
+                    <li><span id="departmentCombo"></span></li>
+                    <li class="ml1"><span id="positionCombo"></span></li>
+                    <li class="ml1"><span id="userCombo"></span></li>
+                    <li class="ml1"><span id="isDisableCombo"></span></li>
+                </ul>
+            </div>
+            <div class="fl ml1 ui-btn-group">
+                <a id="lastMonth" class="ui-btn current"><span>上月</span></a>
+                <a id="curYear" class="ui-btn"><span>今年</span></a>
+                <a id="lastYear" class="ui-btn"><span>去年</span></a>
+            </div>
+        </div>
+        <div class="diy-con bg-rgba07"></div>
+    </div>
+<<<<<<< HEAD
+    <script type="text/javascript" src="/statics/js/dist/user-medal-list.js?v=2026102701"></script>
+=======
+    <script type="text/javascript" src="/statics/js/dist/user-medal-list.js?v=2026101403"></script>
+>>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+</body>
+
+</html>

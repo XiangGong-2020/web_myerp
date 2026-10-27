@@ -1,0 +1,413 @@
+var defaultPage = Public.getDefaultPage();
+var amountPlaces = Number(defaultPage.SYSTEM.amountPlaces);
+var queryConditions = {
+    categoryId: -1,
+    disableType: 0,
+    skey: '',
+    blackList: 0
+};
+var categoryCombo = Business.categoryCombo($('#category'), {
+    addOptions: {
+        value: -1,
+        text: '所有客户类别'
+    },
+    defaultSelected: 0,
+    width: 250,
+    listHeight: 470,
+    callback: {
+        onListClick: function() {
+            $('#search').parent().find('.current').trigger('click');
+        }
+    }
+}, 'customertype');
+var disableTypeCombo = $('#disabletype').combo({
+    data: [
+        {id: -1, name: '所有状态'},
+        {id: 0, name: '已启用'},
+        {id: 1, name: '已禁用'}
+    ],
+    value: 'id',
+    text: 'name',
+    defaultSelected: 1,
+    width: 78,
+    callback: {
+        onListClick: function() {
+            $('#search').parent().find('.current').trigger('click');
+        }
+    }
+}).getCombo();
+var THISPAGE = {
+    init: function() {
+        THISPAGE.initGrid();
+        THISPAGE.initDom();
+        THISPAGE.initEvent();
+    },
+    initDom: function() {
+        if ($.inArray('CUSTOMER_EXPORT', defaultPage.SYSTEM.rights) !== -1) {
+            $('#export').removeClass('dn');
+        }
+    },
+    initGrid: function() {
+        var a = Public.setGrid();
+        $('#grid').jqGrid({
+            url: '/Base/Contact/list?type=0',
+            postData: queryConditions,
+            datatype: 'json',
+            colModel: [{
+                name: 'id',
+                label: '<span class="ml10">ID</span>',
+                width: 60,
+                fixed: !0,
+                sortable: !0,
+                classes: 'ti10 gray'
+            }, {
+                name: 'name',
+                label: '名称',
+                width: 70,
+                fixed: !0,
+                title: !0,
+                sortable: !0,
+                classes: 'ui-ellipsis'
+            }, {
+                name: 'contacter',
+                label: '联系人',
+                width: 54,
+                fixed: !0,
+                title: !0,
+                classes: 'ui-ellipsis'
+            }, {
+                name: 'wangwang',
+                label: '旺旺',
+                width: 100,
+                fixed: !0,
+                title: !0,
+                classes: 'ui-ellipsis'
+            }, {
+                name: 'weixin',
+                label: '微信',
+                width: 100,
+                fixed: !0,
+                title: !0,
+                classes: 'ui-ellipsis'
+            }, {
+                name: 'im',
+                label: 'QQ',
+                width: 90,
+                fixed: !0
+            }, {
+                name: 'mobile',
+                label: '手机',
+                width: 90,
+                fixed: !0
+            }, {
+                name: 'phone',
+                label: '座机',
+                width: 100,
+                fixed: !0
+            }, {
+                name: 'deliveryAddress',
+                label: '联系地址',
+                width: 200,
+                title: !0,
+                classes: 'ui-ellipsis',
+                formatter: function(c, d, e) {
+                    return (e.province || '') + (e.city || '') + (e.county || '') + (c || '');
+                }
+            }, {
+                name: 'comeFrom',
+                label: '来源',
+                width: 100,
+                fixed: !0,
+                title: !0,
+                sortable: !0,
+                classes: 'ui-ellipsis'
+            }, {
+                name: 'amount',
+                label: '预收款余额',
+                width: 80,
+                fixed: !0,
+                sortable: !0,
+                formatter: 'currency',
+                formatoptions: {
+                    showZero: !1,
+                    decimalPlaces: amountPlaces
+                }
+            }, {
+                name: 'cLevel',
+                label: '等级',
+                width: 42,
+                fixed: !0,
+                sortable: !0,
+                align: 'center',
+                formatter: function(c, d, e) {
+                    switch (c) {
+                        case 0:
+                            return '<span class="green">零售</span>';
+                        case 1:
+                            return '<span class="blue">批发</span>';
+                        case 2:
+                            return '<span class="gray">大宗</span>';
+                        case 3:
+                            return '<span class="yellow">分销</span>';
+                        case 4:
+                            return '<span class="red">战略</span>';
+                        default:
+                            return '';
+                    }
+                }
+            }, {
+                name: 'winRate',
+                label: '历史中标率',
+                width: 140,
+                fixed: !0,
+                sortable: !0,
+                formatter: function(a, b, c) {
+                    var d = a == -1 ? '<span class="gray">没投过</span>' : ('<div class="winRate"><div class="winRate-bar bg-aqua" style="width:' + (a <= 0 ? 0 : a) + '%"></div><div class="winRate-text"><span class="db fl ml10 w30">' + a + '%</span><span class="fr mr10">' + c.winInfo + '</span></div></div>');
+                    return d;
+                }
+            }, {
+                name: 'isDisable',
+                label: '状态',
+                width: 54,
+                fixed: !0,
+                sortable: !0,
+                align: 'center',
+                formatter: function(a, b, c) {
+                    var d = a == 0 ? '已启用' : '已禁用';
+                    var e = a == 0 ? 'hover-green' : 'hover-red';
+                    var f = a == 0 ? '点击禁用' : '点击启用';
+                    return '<span class="disable-btn db h28 lh28 b-r-3 ' + e + '" title="' + f + '" data-isdisable="' + a + '" data-id="' + c.id + '">' + d + '</span>';
+                }
+            }, {
+                name: 'operate',
+                label: '操作',
+                width: 72.8,
+                fixed: !0,
+                formatter: Public.operFmatter
+            }],
+            cmTemplate: {sortable: !1, title: !1},
+            jsonReader: {root: 'data.rows', records: 'data.records', total: 'data.total', repeatitems: !1, id: 'id'},
+            width: a.w,
+            height: a.h,
+            altRows: !1,
+            gridview: !0,
+            multiselect: !0,
+            shrinkToFit: !0,
+            forceFit: !1,
+            viewsortcols: [true, 'vertical', true],
+            sortname: 'id',
+            sortorder: 'DESC',
+            pager: '#page',
+            page: 1,
+            rowNum: 100,
+            rowList: [100, 200, 500],
+            viewrecords: !0,
+            loadComplete: function(data) {
+                if (data && 200 == data.status) {
+                    for (var i = 0; i < data.data.rows.length; i++) {
+                        if (data.data.rows[i].isDisable == 1) { //已禁用
+                            $('#' + data.data.rows[i].id).addClass('ui-state-disabled');
+                            $('#' + data.data.rows[i].id + ' input').attr({disabled: 'disabled'});
+                        }
+                    }
+                } else {
+                    data.status == -1 && $.dialog.tips(data.msg, 2);
+                }
+            },
+            loadError: function(a, b) {
+                $.dialog.tips('Type: ' + b + '; Response: ' + a.status + ' ' + a.statusText, 2);
+            },
+            ondblClickRow: function(c) {
+                $('#' + c).find('.ui-icon-pencil').trigger('click');
+            }
+        });
+    },
+    initEvent: function() {
+        $('#search').on('click', function() {
+            $(this).addClass('current').siblings().removeClass('current');
+            queryConditions.categoryId = categoryCombo.getValue();
+            queryConditions.disableType = disableTypeCombo.getValue();
+            queryConditions.skey = $.trim($('#skey').val()).split(/[ ,，]+/).toString();
+            queryConditions.blackList = 0;
+            $('#grid').jqGrid('setGridParam', {
+                postData: queryConditions,
+                page: 1
+            }).trigger('reloadGrid');
+        });
+        $('#searchBlack').on('click', function() {
+            $(this).addClass('current').siblings().removeClass('current');
+            queryConditions.categoryId = categoryCombo.getValue();
+            queryConditions.disableType = disableTypeCombo.getValue();
+            queryConditions.skey = $.trim($('#skey').val()).split(/[ ,，]+/).toString();
+            queryConditions.blackList = 1;
+            $('#grid').jqGrid('setGridParam', {
+                postData: queryConditions,
+                page: 1
+            }).trigger('reloadGrid');
+        });
+        $('#addBlack').on('click', function(a) {
+            a.preventDefault();
+            if (Business.verifyRight('CUSTOMER_UPDATE')) {
+                var b = $('#grid').jqGrid('getGridParam', 'selarrrow');
+                if (b.length > 0) {
+                    $.dialog.confirm('确定将选择的客户加入黑名单？', function() {
+                        var c = b.join();
+                        Public.ajaxPost('/Base/Contact/upBlackList', {
+                            blackList: 1,
+                            id: c
+                        }, function(res) {
+                            if (res && 200 == res.status) {
+                                $.dialog.tips('加入黑名单成功！');
+                            } else {
+                                $.dialog.tips('加入黑名单失败！' + res.msg, 2);
+                            }
+                        });
+                    });
+                } else {
+                    $.dialog.tips('请选择需要加入黑名单的客户！', 1);
+                }
+            }
+        });
+        $('#removeBlack').on('click', function(a) {
+            a.preventDefault();
+            if (Business.verifyRight('CUSTOMER_UPDATE')) {
+                var b = $('#grid').jqGrid('getGridParam', 'selarrrow');
+                if (b.length > 0) {
+                    $.dialog.confirm('确定将选择的客户移出黑名单？', function() {
+                        var c = b.join();
+                        Public.ajaxPost('/Base/Contact/upBlackList', {
+                            blackList: 0,
+                            id: c
+                        }, function(res) {
+                            if (res && 200 == res.status) {
+                                $.dialog.tips('移出黑名单成功！');
+                            } else {
+                                $.dialog.tips('移出黑名单失败！' + res.msg, 2);
+                            }
+                        });
+                    });
+                } else {
+                    $.dialog.tips('请选择需要移出黑名单的客户！', 1);
+                }
+            }
+        });
+        $('#refresh').on('click', function() {
+            window.location.reload();
+        });
+        $('#add').on('click', function(a) {
+            a.preventDefault();
+            if (Business.verifyRight('CUSTOMER_ADD')) {
+                $.dialog({
+                    title: '新增客户',
+                    content: 'url:/Uri/customer_manage',
+                    data: {
+                        oper: 'add',
+                        callback: THISPAGE.callback
+                    },
+                    width: 1250,
+                    height: 500,
+                    max: !1,
+                    min: !1,
+                    cache: !1,
+                    lock: !0
+                });
+            }
+        });
+        $('#export').on('click', function(a) {
+            if (Business.verifyRight('CUSTOMER_EXPORT')) {
+                var c = $('#grid').jqGrid('getGridParam', 'selarrrow');
+                var d = c.join();
+                var e = d ? '&ids=' + d : '';
+                queryConditions.categoryId = categoryCombo.getValue();
+                queryConditions.disableType = disableTypeCombo.getValue();
+                queryConditions.skey = $.trim($('#skey').val()).split(/[ ,，]+/).toString();
+                for (var f in queryConditions) {
+                    queryConditions[f] && (e += '&' + f + '=' + queryConditions[f]);
+                }
+                var g = '/Base/Contact/export?type=0' + e;
+                console.log(g);
+                $(this).attr('href', g);
+            } else {
+                return void a.preventDefault();
+            }
+        });
+        $('.grid-wrap').on('click', '.ui-icon-pencil', function(a) {
+            a.preventDefault();
+            if (Business.verifyRight('CUSTOMER_QUERY')) {
+                var id = $(this).parent().data('id');
+                $.dialog({
+                    title: '编辑客户',
+                    content: 'url:/Uri/customer_manage',
+                    data: {
+                        oper: 'edit',
+                        rowId: id,
+                        callback: THISPAGE.callback
+                    },
+                    width: 1250,
+                    height: 500,
+                    max: !1,
+                    min: !1,
+                    cache: !1,
+                    lock: !0
+                });
+            }
+        });
+        $('.grid-wrap').on('click', '.ui-icon-trash', function(a) {
+            a.preventDefault();
+            if (Business.verifyRight('CUSTOMER_DELETE')) {
+                var id = $(this).parent().data('id');
+                id && $.dialog.confirm('删除数据需谨慎，删除后数据不可恢复，确定尝试删除？', function() {
+                    Public.ajaxPost('/Base/Contact/delete', {
+                        type: 0,
+                        id: id
+                    }, function(res) {
+                        if (res && 200 == res.status) {
+                            $('#grid').jqGrid('delRowData', id);
+                            $.dialog.tips('删除成功！');
+                        } else {
+                            $.dialog.tips('删除失败！' + res.msg, 2);
+                        }
+                    });
+                });
+            }
+        });
+        $('.grid-wrap').on('click', '.disable-btn', function(a) {
+            a.stopPropagation();
+            a.preventDefault();
+            if (Business.verifyRight('CUSTOMER_DISABLE')) {
+                var id = $(this).data('id');
+                var isdisable = Number(!$(this).data('isdisable'));
+                id && Public.ajaxPost('/Base/Contact/disable', {
+                    id: id,
+                    isDisable: isdisable,
+                    type: 'customer'
+                }, function(res) {
+                    if (res && 200 == res.status) {
+                        $.dialog.tips('客户' + (0 == isdisable ? '启用' : '禁用') + '成功！');
+                        $('#grid').jqGrid('setCell', id, 'isDisable', isdisable);
+                    } else {
+                        $.dialog.tips('客户' + (0 == isdisable ? '启用' : '禁用') + '失败！' + res.msg, 2);
+                    }
+                });
+            }
+        });
+        $(window).on('keydown', function(a) {
+            var curKey = a.which;
+            if (curKey == 13) {
+                $('#search').parent().find('.current').trigger('click');
+            }
+        });
+        $(window).on('resize', function() {
+            Public.resizeGrid();
+        });
+    },
+    callback: function(a, b, c, d) {
+        var e = $('#grid').data('gridData');
+        e || (e = {}, $('#grid').data('gridData', e));
+        e[a.id] = a;
+        'edit' == b ? ($('#grid').jqGrid('setRowData', a.id, a), c && (d == 1 ? c.api.close() : c.THISPAGE.resetForm())) : (a.isDisable = 0, $('#grid').jqGrid('addRowData', a.id, a, 'first'), c && (d == 1 ? c.api.close() : c.THISPAGE.resetForm()));
+    }
+};
+$(function() {
+    THISPAGE.init();
+});

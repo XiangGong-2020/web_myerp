@@ -1,0 +1,182 @@
+.fs-wrap {
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #fff;
+    border: 1px solid #E1E2E3;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.fs-wrap.active {
+    position: relative;
+    z-index: 9;
+    border-color: #2c65ff;
+}
+
+.fs-label-wrap {
+    position: relative;
+    height: 28px;
+    cursor: pointer;
+}
+
+.fs-label-wrap,
+.fs-dropdown {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.fs-input {
+    width: calc(100% - 25px);
+    height: 28px;
+    padding: 0 20px 0 5px;
+    line-height: 28px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: transparent;
+    overflow: hidden;
+    outline: 0 none;
+    border: 0 none;
+    cursor: pointer;
+}
+
+.fs-arrow,
+.fs-arrow-dis {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 28px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: left;
+    color: #999;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.fs-arrow:hover {
+    color: #000;
+}
+
+.fs-dropdown {
+    position: absolute;
+    width: 100%;
+    margin: 5px -1px;
+    background-color: #fff;
+    border: 1px solid #E1E2E3;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px #00000015;
+}
+
+.fs-dropdown .fs-options {
+    overflow: auto;
+}
+
+.fs-input-search {
+    width: 100%;
+    padding: 5px;
+    outline: 0 none;
+    border: 1px solid #2c65ff;
+    border-radius: 3px;
+}
+
+.fs-option,
+.fs-search,
+.fs-optgroup-label {
+    padding: 7px 8px;
+    border-bottom: 1px solid #E1E2E3;
+    cursor: default;
+}
+
+.fs-option {
+    cursor: pointer;
+}
+
+.fs-option .hl {
+    background-color: #f5f5f5;
+}
+
+.fs-wrap.multiple .fs-option {
+    position: relative;
+    padding-left: 30px;
+}
+
+.fs-wrap.multiple .fs-checkbox {
+    position: absolute;
+    display: block;
+    width: 30px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.fs-wrap.multiple .fs-option .fs-checkbox i {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+}
+
+.fs-wrap.multiple .fs-option.selected .fs-checkbox i {
+    background-color: #2c65ff;
+    border-color: transparent;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAGCAYAAAD+Bd/7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAABMSURBVAiZfc0xDkAAFIPhd2Kr1WRjcAExuIgzGUTIZ/AkImjSofnbNBAfHvzAHjOKNzhiQ42IDFXCDivaaxAJd0xYshT3QqBxqnxeHvhunpu23xnmAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fs-wrap.fs-option:hover {
+    background-color: #f5f5f5;
+}
+
+.fs-optgroup-label {
+    font-weight: bold;
+    text-align: left;
+    color: #000;
+    background-color: #eee;
+}
+
+.btnFixed {
+    position: relative;
+    z-index: 1;
+    height: 45px;
+    margin-top: -1px;
+    text-align: center;
+    border-top: 1px solid #E1E2E3;
+}
+
+.btnFixed .btn {
+    width: 40px;
+    height: 26px;
+    margin: 10px -1px 0 0;
+    line-height: 26px;
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #E1E2E3;
+    cursor: pointer;
+    transition: all .15s ease-out;
+}
+
+.btnFixed .btn:hover {
+    position: relative;
+    color: #2c65ff;
+    border-color: #2c65ff;
+}
+
+.hidden {
+    display: none !important;
+}

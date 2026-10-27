@@ -1,0 +1,712 @@
+@charset "utf-8";
+
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 1430px;
+    min-height: 500px;
+    background-color: #fff;
+}
+
+/* container */
+#container {
+    position: relative;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* col-side */
+#col-side {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #00000022;
+}
+
+#col-side:hover {
+    box-shadow: 10px 0 20px 10px #2c65ff55;
+}
+
+/* xcx */
+.xcx {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 60px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.xcx-main {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 44px;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.xcx-main .icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.xcx-main .text {
+    display: block;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+}
+
+.xcx:hover {
+    background: url(../img/bg-nav.png) right 18px no-repeat;
+}
+
+.xcx-wrap {
+    position: absolute;
+    z-index: 4;
+    left: 50px;
+    bottom: 0;
+    width: 146px;
+    height: 0;
+<<<<<<< HEAD
+    background: url('../img/xcx.jpg?v=2026102701') center center no-repeat #fff;
+=======
+    background: url('../img/xcx.jpg?v=2026101403') center center no-repeat #fff;
+>>>>>>> 151b415 (更新语言最新版本+最新底层框架后全部差异化代码适配重写)
+}
+
+.xcx:hover+.xcx-wrap {
+    height: 240px;
+    transition: all .3s;
+}
+
+/* nav */
+#nav {
+    position: relative;
+    zoom: 1;
+    width: 50px;
+    min-height: 100vh;
+}
+
+#nav .item {
+    width: 50px;
+    height: 60px;
+    background-image: url(../img/bg-nav.png);
+    background-position: 50px center;
+    background-repeat: no-repeat;
+}
+
+#nav .item:hover {
+    background-color: #00000033;
+    transition: all .2s;
+}
+
+#nav .item.current {
+    background-position: 45px center;
+    background-color: #00000066;
+    transition: all .2s;
+}
+
+#nav .main-nav {
+    position: relative;
+    z-index: 3;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 44px;
+    padding: 8px 0;
+    text-align: center;
+    color: #fff;
+}
+
+#nav .main-nav .icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+}
+
+#nav .main-nav .text {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+}
+
+#nav .main-alert {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    background-color: #ff504a;
+    border-radius: 3px;
+}
+
+/* sub-nav-wrap */
+#nav .sub-nav-wrap {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    width: 150px;
+    height: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#nav .sub-nav-wrap .nav-item {
+    overflow: hidden;
+}
+
+#nav .sub-nav-wrap .nav-item .title {
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 40px;
+    text-indent: 13px;
+    color: #777;
+    cursor: default;
+    transition: all .3s;
+}
+
+#nav .sub-nav {
+    padding: 0;
+}
+
+#nav .sub-nav li {
+    position: relative;
+    width: 50px;
+    height: 36px;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+#nav .sub-nav li a {
+    zoom: 1;
+    display: block;
+    width: 100%;
+    height: 36px;
+    font-size: 12px;
+    line-height: 36px;
+    color: #698096;
+    overflow: hidden;
+    transition: all .2s;
+}
+
+#nav .sub-nav li a i {
+    display: block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 3px 10px;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 30px;
+    text-align: center;
+    color: #698096;
+}
+
+#nav .sub-nav li:hover {
+    background-image: linear-gradient(90deg, #fff 0%, #2c65ff33 50%, #fff 100%);
+}
+
+#nav .sub-nav li.current a {
+    color: #2c65ff;
+    transition: all .2s
+}
+
+#nav .sub-nav li.current a i {
+    font-size: 16px !important;
+    color: #fff;
+    background: #2c65ff;
+    border-radius: 3px;
+    transition: all .2s
+}
+
+#nav .sub-nav li .nav-alert {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    min-width: 8px;
+    font-size: 88%;
+    line-height: 16px;
+    padding: 0 4px;
+    color: #fff;
+    background-color: #ff504a;
+    border-radius: 8px;
+}
+
+/* col_main */
+#col-main {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 100px);
+    padding-left: 0;
+    background-color: #fff;
+    overflow: hidden;
+    zoom: 1;
+}
+
+#main-bd {
+    overflow: hidden;
+    zoom: 1;
+}
+
+#page-tab {
+    zoom: 1;
+    height: 100% !important;
+}
+
+/* tab */
+.l-tab-loading {
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.l-tab-links {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    height: 50px;
+    color: #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #00000022;
+}
+
+.l-tab-links ul {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    zoom: 1;
+    list-style: none;
+    width: 99999px;
+    overflow: hidden;
+}
+
+.l-tab-links li {
+    position: relative;
+    float: left;
+    margin: 0 10px;
+    padding: 0 20px 0 0;
+    height: 50px;
+    font-size: 12px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.l-tab-links li:first-child {
+    padding: 0;
+}
+
+.l-tab-links li a {
+    display: block;
+    float: left;
+    text-decoration: none;
+    font-size: 12px;
+    color: #698096;
+    user-select: none;
+}
+
+.l-tab-links li a i {
+    font-weight: normal;
+}
+
+.l-tab-links li.l-selected {
+    height: 48px;
+    border-bottom: 2px solid #2c65ff;
+    overflow: hidden;
+    transition: all .15s;
+}
+
+.l-tab-links li.l-selected a {
+    color: #2c65ff;
+}
+
+.l-tab-links-item-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    text-align: center;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.l-tab-links li.l-selected .l-tab-links-item-close {
+    color: #2c65ff;
+}
+
+.l-tab-links-item-close:hover,
+.l-tab-links li.l-selected .l-tab-links-item-close:hover {
+    color: #ff504a;
+}
+
+.l-tab-links-left,
+.l-tab-links-right {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    color: #698096;
+    background-color: #fff;
+}
+
+.l-tab-links-left i,
+.l-tab-links-right i {
+    font-size: 20px;
+}
+
+.l-tab-links-left {
+    left: 0;
+    border-right: 1px solid #00000011;
+}
+
+.l-tab-links-right {
+    right: 0;
+    border-left: 1px solid #00000011;
+}
+
+.l-tab-links-left-over,
+.l-tab-links-right-over {
+    color: #2c65ff;
+    transition: all .2s;
+}
+
+.l-tab-links-left-invalid,
+.l-tab-links-right-invalid {
+    color: #aaa;
+}
+
+.l-tab-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: calc(100% - 50px) !important;
+}
+
+.l-tab-content-item {
+    position: relative;
+    width: 100%;
+    height: 100% !important;
+}
+
+.l-tab-content-item iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* TAB栏右键点击弹出管理菜单 */
+.l-menu {
+    position: absolute;
+    z-index: 2;
+    width: 90px;
+    padding: 0 5px 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #00000033;
+}
+
+.l-menu-item {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.l-menu-item-text {
+    width: 100%;
+    height: 30px;
+    margin: 5px 0 0;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    background: #2c65ff;
+    border-radius: 3px;
+}
+
+.l-menu-item-text:hover {
+    background: #ff504a;
+    transition: background .3s;
+}
+
+.l-menu-item-disable {
+    cursor: default;
+}
+
+.l-menu-item-disable .l-menu-item-text {
+    color: #ccc;
+}
+
+.l-menu-item-disable .l-menu-item-text:hover {
+    color: #ccc;
+    background: #2c65ff;
+}
+
+/* TAB栏 所有打开的页面 */
+.l-tab-switch {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    right: 115px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    overflow: hidden;
+    color: #698096;
+    background: #fff;
+    cursor: pointer;
+}
+
+.l-tab-switch:hover {
+    color: #000;
+    transition: all .2s;
+}
+
+.l-tab-itemswitch {
+    width: 40px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.l-tab-links .l-tab-itemswitch a {
+    width: 100%;
+    margin: 0;
+}
+
+.l-tab-switchable .l-tab-links-right {
+    border-right: 1px solid #00000011;
+    right: 164px;
+}
+
+.l-tab-switchable .l-tab-switch {
+    display: block;
+}
+
+.l-tab-windowsswitch {
+    position: fixed;
+    top: 51px;
+    right: 0;
+    font-size: 14px;
+    text-align: left;
+    background: #fff;
+    border-top: 1px solid #00000022;
+    border-radius: 0 0 0 3px;
+    box-shadow: -5px 5px 5px 0 #2c65ff33;
+}
+
+.l-tab-windowsswitch::after {
+    position: absolute;
+    z-index: 9;
+    top: -7px;
+    left: 23px;
+    content: '';
+    width: 13px;
+    height: 13px;
+    background: #ffff;
+    transform: rotate(45deg);
+    border-top: 1px solid #00000022;
+    border-left: 1px solid #00000022;
+}
+
+.l-tab-windows {
+    max-height: calc(100vh - 91px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 130px;
+    padding: 20px;
+}
+
+.l-tab-windows a {
+    display: block;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+    text-decoration: none;
+    color: #698096;
+}
+
+.l-tab-windows a:hover {
+    color: #000;
+    transition: all .2s;
+}
+
+.l-tab-windows a.selected {
+    color: #2c65ff;
+    transition: all .2s;
+}
+
+/* tab栏 个人中心 */
+.l-tab-user {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 115px;
+    height: 50px;
+    overflow: hidden;
+    color: #698096;
+    background: #FFF;
+    cursor: pointer;
+}
+
+.l-tab-user:hover {
+    color: #000;
+    transition: all .2s;
+}
+
+.l-tab-user-avatar {
+    float: left;
+    margin: 10px 5px 0 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px #00000005;
+}
+
+.l-tab-user-name {
+    float: left;
+    width: 60px;
+    margin: 10px 0;
+    text-align: left;
+    line-height: 15px;
+}
+
+.l-tab-user-con {
+    position: fixed;
+    top: 51px;
+    right: 0;
+    max-height: calc(100vh - 87px);
+    padding: 20px;
+    background: #fff;
+    border-top: 1px solid #00000022;
+    border-radius: 0 0 0 3px;
+    box-shadow: -5px 5px 5px 0 #2c65ff33;
+}
+
+.l-tab-user-con::after {
+    content: '';
+    width: 13px;
+    height: 13px;
+    background: #ffff;
+    position: absolute;
+    top: -7px;
+    left: 50px;
+    transform: rotate(45deg);
+    border-top: 1px solid #00000022;
+    border-left: 1px solid #00000022;
+}
+
+.l-tab-user-con .user-nav {
+    width: 100%;
+    text-align: left;
+    line-height: 30px;
+    color: #698096;
+    cursor: pointer;
+}
+
+.l-tab-user-con .user-nav:hover {
+    color: #000;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+/* 紧急通知 */
+.urgent-con {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 0 10px 0 #2c65ff99;
+    transition: all .2s;
+}
+
+.urgent-alert-con {
+    max-height: calc(100vh - 200px);
+    margin: 10px 0 34px 10px;
+    overflow-y: auto;
+    font-size: 12px;
+    transition: all .2s;
+}
+
+.urgent-alert-info {
+    font-size: 12px;
+}
+
+.urgent-alert-hide {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 34px;
+    line-height: 34px;
+    color: #333;
+    background-color: #fff;
+    cursor:default;
+}
+
+.urgent-alert-tip {
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    width: 60px;
+    height: 36px;
+    background-color: #ff504a;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #2c65ff99;
+    cursor: pointer;
+}
+
+.urgent-alert-tip-icon {
+    margin: 0 0 0 13px;
+    font-size: 12px;
+    line-height: 36px;
+    color: #fff;
+}

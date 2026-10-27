@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/* 顶部工具栏 */
+.bill-tool-top {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #00000022;
+}
+
+.bill-has-checked {
+    float: left;
+    width: 65px;
+    height: 26px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 2px solid #07c160;
+    border-radius: 3px;
+}
+
+.bill-has-checked::after {
+    display: block;
+    width: 100%;
+    height: 100px;
+    content: '已审核';
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 26px;
+    color: #07c160;
+}
+
+.bill-has-signed {
+    float: left;
+    width: 65px;
+    height: 26px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 2px solid #07c160;
+    border-radius: 3px;
+}
+
+.bill-has-signed::after {
+    display: block;
+    width: 100%;
+    height: 100px;
+    content: '已交货';
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 26px;
+    color: #07c160;
+}
+
+/* 单据主体 */
+.bills {
+    position: relative;
+    min-height: calc(100vh - 86px);
+    padding: 50px 10px 10px;
+    margin: 0 0 -5px;
+    background-color: #fff;
+}
+
+/* 撕页线 */
+.page-line {
+    position: relative;
+    z-index: 1;
+    margin: 15px -20px 25px;
+    width: calc(100% + 40px);
+    height: 0;
+    border-bottom: 8px dotted #d7d8d9;
+}
+
+.page-line::after {
+    position: absolute;
+    bottom: -5px;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #d7d8d9;
+}
+
+/* 单据头部 */
+.con-header {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    margin: 0 -15px;
+    background-color: #fff;
+}
+
+.con-header .reqInfo {
+    float: left;
+    height: 28px;
+    padding: 0 5px;
+    margin: 10px 0 0 0;
+    line-height: 28px;
+    color: #999;
+    background: #fff;
+    border-bottom: 1px solid #E1E2E3;
+}
+
+.con-header .come-from span#billFrom {
+    float: left;
+    width: 190px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 5px;
+    border: 0 none;
+    border-bottom: 1px solid #E1E2E3;
+    border-radius: 0;
+}
+
+.con-header dd {
+    position: relative;
+    float: left;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.con-header label {
+    position: relative;
+    display: block;
+    float: left;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-indent: 5px;
+    color: #999;
+    border: 0 none;
+    border-bottom: 1px solid #E1E2E3;
+}
+
+.con-header label::after {
+    display: block;
+    content: '：';
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.con-header .ui-input {
+    float: left;
+    width: 190px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 5px;
+    border: 0 none;
+    border-bottom: 1px solid #E1E2E3;
+    border-radius: 0;
+}
+
+.con-header .ui-combo-wrap {
+    border: 0 none;
+    border-bottom: 1px solid #E1E2E3;
+    border-radius: 0;
+}
+
+.con-header .fs-wrap {
+    width: 200px;
+    border: 0 none;
+    border-bottom: 1px solid #E1E2E3;
+    border-radius: 0;
+}
+
+.con-header .ui-input-focus,
+.con-header .ui-input:focus,
+.con-header .ui-combo-active,
+.con-header .fs-wrap.active {
+    border-color: #2c65ff !important;
+    box-shadow: none !important;
+}
+
+/* 重写表格主体 */
+.ui-jqgrid tr.ui-row-ltr td {
+    box-shadow: inset 1px 0 1px #00000011;
+}
+
+.ui-jqgrid tr.ui-row-ltr td:first-child {
+    box-shadow: none;
+}
+
+/* 扫码枪录入按钮*/
+#barCodeInsert {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .3);
+    padding: 0 5px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+#barCodeInsert.active {
+    background-color: #07c160;
+}
+
+/* 单据备注 */
+.description {
+    position: relative;
+    height: 100px;
+}
+
+#description {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    overflow: auto;
+}
+
+#desBtn {
+    position: absolute;
+    z-index: 2;
+    right: 10px;
+    bottom: 10px;
+}
+
+/* 单据底部 */
+.con-footer {
+    margin: 10px 0 0;
+}
+
+.con-footer ul {
+    width: 100%;
+}
+
+.con-footer ul li {
+    float: left;
+    margin: 0 50px 10px 0;
+    width: auto;
+}
+
+.con-footer ul li label {
+    display: block;
+    float: left;
+    padding: 0 10px 0 0;
+    width: auto;
+    height: 28px;
+    line-height: 28px;
+    color: #999;
+}
+
+.con-footer ul li span {
+    display: block;
+    float: left;
+    width: auto;
+    height: 28px;
+    padding: 0;
+    line-height: 28px;
+    color: #999;
+}
